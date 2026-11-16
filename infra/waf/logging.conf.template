@@ -1,0 +1,3 @@
+log_format erp_safe escape=json '{"time":"$time_iso8601","source":"waf","requestId":"$request_id","method":"$request_method","area":"$erp_area","status":$status,"duration":$request_time}';
+access_log /var/log/erp/access.log erp_safe;
+error_log /dev/stderr crit;

@@ -1,0 +1,9 @@
+{
+  "sourceName": "odoo-20.0.zip",
+  "sourceBytes": 247271586,
+  "sha256": "27396B0BFCBC2E699A6B07A966CE4AD779359FF9B2EA9EDB51638F643BA2FB1D",
+  "reviewDate": "2026-11-13",
+  "scope": "Manifest inventory, model action signatures and selected business workflow/security code; no image review",
+  "sourceExecuted": false,
+  "packagesInstalledOnHost": false
+}

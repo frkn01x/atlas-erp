@@ -1,0 +1,29 @@
+logging {
+  level = "warn"
+}
+loki.source.file "api" {
+  targets = [{__path__ = "/logs/api/*.log", job = "atlas-api", service = "api"}]
+  forward_to = [loki.write.local.receiver]
+  file_match {
+    enabled = true
+  }
+}
+loki.source.file "waf" {
+  targets = [{__path__ = "/logs/waf/*.log", job = "atlas-waf", service = "waf"}]
+  forward_to = [loki.write.local.receiver]
+  file_match {
+    enabled = true
+  }
+}
+loki.source.file "web" {
+  targets = [{__path__ = "/logs/web/*.log", job = "atlas-web", service = "web"}]
+  forward_to = [loki.write.local.receiver]
+  file_match {
+    enabled = true
+  }
+}
+loki.write "local" {
+  endpoint {
+    url = "http://loki:3100/loki/api/v1/push"
+  }
+}

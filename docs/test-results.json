@@ -1,0 +1,64 @@
+{
+  "at": "2026-11-13T17:33:30.4034113+03:00",
+  "version": "0.2.0",
+  "ok": true,
+  "running": false,
+  "steps": [
+    {
+      "ok": true,
+      "name": "Docker erisimi",
+      "startedAt": "2026-11-13T17:31:04.781766+03:00"
+    },
+    {
+      "ok": true,
+      "name": "Compose yapilandirmasi",
+      "startedAt": "2026-11-13T17:31:05.0442652+03:00"
+    },
+    {
+      "ok": true,
+      "name": "Test imaji",
+      "startedAt": "2026-11-13T17:31:05.191101+03:00"
+    },
+    {
+      "ok": true,
+      "name": "Domain testleri",
+      "startedAt": "2026-11-13T17:31:07.9487169+03:00"
+    },
+    {
+      "ok": true,
+      "name": "React / web derlemesi",
+      "startedAt": "2026-11-13T17:31:09.0586714+03:00"
+    },
+    {
+      "ok": true,
+      "name": "Bagimlilik guvenlik denetimi",
+      "startedAt": "2026-11-13T17:31:12.6564226+03:00"
+    },
+    {
+      "ok": true,
+      "name": "Docker lock dosyasini alma",
+      "startedAt": "2026-11-13T17:31:14.4575186+03:00"
+    },
+    {
+      "ok": true,
+      "name": "Atlas/API kabul testleri",
+      "startedAt": "2026-11-13T17:31:14.7946279+03:00"
+    },
+    {
+      "ok": true,
+      "name": "Test konteynerlerini kapatma",
+      "startedAt": "2026-11-13T17:33:09.9974069+03:00"
+    },
+    {
+      "ok": true,
+      "name": "Uygulamayi derle ve baslat",
+      "startedAt": "2026-11-13T17:33:10.819394+03:00"
+    },
+    {
+      "ok": true,
+      "name": "HTTP hazirlik kontrolu",
+      "startedAt": "2026-11-13T17:33:30.2500403+03:00"
+    }
+  ],
+  "acceptanceSkipped": false
+}

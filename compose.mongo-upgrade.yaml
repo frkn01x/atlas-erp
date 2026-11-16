@@ -1,0 +1,23 @@
+services:
+  auth-test-mongo:
+    extends: {file: compose.auth-race.yaml, service: auth-test-mongo}
+  ai-fixture:
+    build: {context: ., target: test}
+    command: [node, api/test/ai-fixture.mjs]
+    networks: [auth-test]
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+  driver-test:
+    extends: {file: compose.auth-race.yaml, service: auth-race}
+    command: [node, api/test/mongo-upgrade-isolated.mjs]
+    environment:
+      MONGODB_URI: mongodb://auth-test-mongo:27017/atlas_driver_upgrade_test?replicaSet=auth-test
+      MONGODB_DB: atlas_driver_upgrade_test
+      COLLECTION_PREFIX: driver_test_
+      AI_TEST_ORIGIN: http://ai-fixture:9000/v1
+      API_URL: http://127.0.0.1:3000/api
+    mem_limit: 512m
+networks:
+  auth-test:
+    internal: true

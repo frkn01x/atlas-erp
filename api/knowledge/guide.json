@@ -1,0 +1,1363 @@
+{
+  "version": "0.3.0-guide-2026-11-15",
+  "title": "Atlas ERP Sistem ve Is Akisi Rehberi",
+  "sections": [
+    {
+      "id": "contacts.1",
+      "scope": "contacts",
+      "title": "Kisiler — Cari karti",
+      "text": "Sol menu → Satis → Kisiler → Yeni kayit. Ad/unvan girin; kind alani customer=musteri, vendor=tedarikci, both=ikisidir. Vergi ve adres bilgilerini burada tamamlayin."
+    },
+    {
+      "id": "contacts.2",
+      "scope": "contacts",
+      "title": "Kisiler — Pazarlama izni",
+      "text": "E-posta pazarlama izni yes ise kisi kampanyaya dahil edilebilir. Izin yoksa gonderilmez. Abonelikten cikis kisinin iznini kaldirir."
+    },
+    {
+      "id": "products.1",
+      "scope": "products",
+      "title": "Urunler — Urun olusturma",
+      "text": "Sol menu → Stok → Urunler → Yeni kayit. Ad, benzersiz stok kodu, KDV haric satis/alish fiyati ve vergi yuzdesi girilir. Yeni urunun stogu sifirdir; stok alimi veya sayimla olusur."
+    },
+    {
+      "id": "products.2",
+      "scope": "products",
+      "title": "Urunler — Stok ve magaza",
+      "text": "Toplam stok depo hareketlerinden hesaplanir. Magazada yayinla=yes, urunu yayinlanan sitenin vitrinine acar. Rezerve stok satilabilir bakiyeyi dusurur."
+    },
+    {
+      "id": "crm.1",
+      "scope": "crm",
+      "title": "CRM / Firsatlar — Firsat asamalari",
+      "text": "Sol menu → Satis → CRM / Firsatlar. Firsat olusturun; nitelendirme, teklif, kazanildi/kaybedildi asamalarini satir dugmelerinden ilerletin."
+    },
+    {
+      "id": "crm.2",
+      "scope": "crm",
+      "title": "CRM / Firsatlar — Teklif donusumu",
+      "text": "Cari ve urun satirlari dolduruldugunda Satis teklifi olustur dugmesi satis kaydi acar. Bir firsat ikinci defa teklife donusturulemez."
+    },
+    {
+      "id": "sales.1",
+      "scope": "sales",
+      "title": "Satis Siparisleri — Satis akisi",
+      "text": "Sol menu → Satis → Satis Siparisleri → Yeni kayit. Cari, urun, miktar, birim fiyat ve vergi secin. Kayittan sonra Onayla, Sevk et ve Fatura olustur dugmeleri satirda sirayla gorunur. Ayrinti paneli aciksa islem sonrasi kapanmaz."
+    },
+    {
+      "id": "sales.2",
+      "scope": "sales",
+      "title": "Satis Siparisleri — Sevkiyat kurallari",
+      "text": "Depo bos ise ana depo kullanilir. Sevk etmek icin satis islem iznine ek depo islem yetkisi gerekir. Kullanilabilir stok yetersizse islem butunuyle geri alinir. Onayli belge satirlari degistirilemez."
+    },
+    {
+      "id": "purchases.1",
+      "scope": "purchases",
+      "title": "Satin Alma — Satin alma kaydi",
+      "text": "Sol menu → Tedarik → Satin Alma → Yeni kayit. Belge adi, cari, urun satirlari ve depo girilir. Depo bos ise ana depo kullanilir. Fiyatlar KDV harictir."
+    },
+    {
+      "id": "purchases.2",
+      "scope": "purchases",
+      "title": "Satin Alma — Onay ve teslim alma",
+      "text": "Kayit satirindaki Onayla dugmesini kullanin. Durum degistiginde ayni satirda Teslim al gorunur. Bir kez teslim alinir; tekrar stok girisi engellenir. Teslim alma stok bakiyesini ve stok hareketini birlikte olusturur."
+    },
+    {
+      "id": "purchases.3",
+      "scope": "purchases",
+      "title": "Satin Alma — Tedarikci faturasi",
+      "text": "Teslim alinan kayitta Tedarikci faturasi dugmesi taslak fatura acar. Muhasebe islerini o module yetkili kullanici takip eder. Bir siparise tekrar fatura olusturulamaz."
+    },
+    {
+      "id": "invoices.1",
+      "scope": "invoices",
+      "title": "Faturalar — Fatura olusturma",
+      "text": "Sol menu → Muhasebe → Faturalar. Musteri veya tedarikci faturasi olusturulur. Urun miktari × KDV haric birim fiyat ara toplami; satir bazli vergi genel toplami verir."
+    },
+    {
+      "id": "invoices.2",
+      "scope": "invoices",
+      "title": "Faturalar — Muhasebe ve odeme",
+      "text": "Satirdaki Muhasebelestir dugmesi borc/alacak dengeli fis olusturur. Sonraki Odemeyi kaydet dugmesi tam odeme kaydi acar; bu dugme bankadan para gondermez. Ikinci odeme ve taslak faturaya odeme engellenir. Odenmemis faturaya ters kayit yapilabilir."
+    },
+    {
+      "id": "invoices.3",
+      "scope": "invoices",
+      "title": "Faturalar — Belge ciktilari",
+      "text": "Ayrinti panelinde yazdirilabilir fatura ve NES test dugmeleri bulunur. UBL XML indir once belge numarasi/UUID ayirir. NES test ortamına gonder, durum sorgula ve PDF indir islemleri hesap ayarlari tamamlandiginda kullanilir. Yerel yazdirma resmi e-belge degildir."
+    },
+    {
+      "id": "inventory.1",
+      "scope": "inventory",
+      "title": "Stok Hareketleri — Stok defteri",
+      "text": "Sol menu → Stok → Stok Hareketleri. Giris pozitif, cikis negatif miktardir. Depolar arasi transfer iki hareket olusturur ve toplam stogu degistirmez. Kayitlar is akislarindan olusur; deftere elle kayit eklenmez."
+    },
+    {
+      "id": "journal.1",
+      "scope": "journal",
+      "title": "Muhasebe Fisleri — Muhasebe fisleri",
+      "text": "Sol menu → Muhasebe → Muhasebe Fisleri. Fatura, odeme ve ters kayit fisleri otomatik olusur. debit borc, credit alacak demektir; her fisin toplam borcu ve alacagi esittir. Bu deftere disaridan kayit eklenemez veya fis satiri duzenlenemez."
+    },
+    {
+      "id": "manufacturing.1",
+      "scope": "manufacturing",
+      "title": "Uretim Emirleri — Uretim emri",
+      "text": "Sol menu → Uretim → Uretim Emirleri. Mamul, uretim miktari, birim bilesenler ve depo girilir. Onayla ardindan Uretimi tamamla kullanilir. Bilesenler miktar kadar tuketilir, mamul girisi olusur. Yetersiz malzemede tum islem geri alinir."
+    },
+    {
+      "id": "maintenance.1",
+      "scope": "maintenance",
+      "title": "Bakim — Bakim talebi",
+      "text": "Sol menu → Uretim → Bakim. Ekipman, oncelik ve maliyet girilir. Baslat ve Tamamla ile ilerler. Tamamlanma zamani ve maliyet ekipman kartina islenir."
+    },
+    {
+      "id": "employees.1",
+      "scope": "employees",
+      "title": "Calisanlar — Calisan karti",
+      "text": "Sol menu → Insan Kaynaklari → Calisanlar. Ad, is e-postasi, departman, gorev, yonetici ve yillik izin hakki tutulur. Hak bos ise temel hesap 20 gun kabul eder; kullanilan izin uygulama tarafindan korunur. Bordro veya otomatik hak edis bu surumde yoktur."
+    },
+    {
+      "id": "attendance.1",
+      "scope": "attendance",
+      "title": "Puantaj — Puantaj",
+      "text": "Sol menu → Insan Kaynaklari → Puantaj. Calisan ve giris zamani girilir; cikis zamani girilebilir veya Cikis yap aninda olusur. Ayni calisanin iki acik kaydi olamaz. Tek kayit en fazla 24 saattir. 09:00-17:30 araligi 8,5 saat eder."
+    },
+    {
+      "id": "leave.1",
+      "scope": "leave",
+      "title": "Izin Talepleri — Izin talebi",
+      "text": "Sol menu → Insan Kaynaklari → Izin Talepleri. Calisan, baslangic ve bitis tarihi girilir. Onaya gonder ardindan Onayla veya Reddet kullanilir. Hafta ici gunler hesaplanir; resmi tatil takvimi yoktur."
+    },
+    {
+      "id": "leave.2",
+      "scope": "leave",
+      "title": "Izin Talepleri — Bakiye ve iptal",
+      "text": "Onayda bakiye azalir; cakisan onayli izin veya yetersiz hak reddedilir. Onayli izin Izin iptal et ile iptal edilince kullanilan gun geri verilir. Hak, kullanilmis gunun altina indirilemez."
+    },
+    {
+      "id": "recruitment.1",
+      "scope": "recruitment",
+      "title": "Ise Alim — Aday sureci",
+      "text": "Sol menu → Insan Kaynaklari → Ise Alim. Aday, pozisyon ve departman girilir. Gorusme ve teklif asamalarindan sonra Ise al / calisan olustur bir calisan karti acar."
+    },
+    {
+      "id": "recruitment.2",
+      "scope": "recruitment",
+      "title": "Ise Alim — AI mulakat",
+      "text": "AI Mulakat ekraninda pozisyon ve gorev gereksinimlerini tanimlayin; sorular aday cevaplarina gore ilerler. Avatar soruyu seslendirebilir; cevaplar yazilidir. Bu arac teknik gorusme/pratik icindir, otomatik ise alma/eleme karari vermez."
+    },
+    {
+      "id": "recruitment.3",
+      "scope": "recruitment",
+      "title": "Ise Alim — Davet ve veri",
+      "text": "Davet baglantisi yalnizca ilgili mulakata erisir, suresi sinirlidir. Adayin cevaplari yapilandirilmis AI saglayicisina gonderilir; aday onayi alinmadan cevap gonderilmez. Ses kaydi ve biyometrik analiz yapilmaz."
+    },
+    {
+      "id": "fleet.1",
+      "scope": "fleet",
+      "title": "Arac Filosu — Arac filosu",
+      "text": "Sol menu → Insan Kaynaklari → Arac Filosu. Plaka, kilometre, surucu, sigorta ve muayene tarihleri tutulur. Toplam maliyet ve kilometre servis/yakit kayitlariyla ilerler."
+    },
+    {
+      "id": "projects.1",
+      "scope": "projects",
+      "title": "Projeler — Proje ve gorev",
+      "text": "Sol menu → Hizmetler → Projeler. Proje olusturulur ve baslatilir. Bagli acik gorevler varken proje tamamlanamaz. Gorevler kendi ekraninda takip edilir."
+    },
+    {
+      "id": "tasks.1",
+      "scope": "tasks",
+      "title": "Gorevler — Gorev takibi",
+      "text": "Sol menu → Hizmetler → Gorevler. Proje, sorumlu, planlanan saat ve tarih girilir. Taslak, aktif ve tamamlandi asamalari vardir. Tamamlanmis projeye yeni gorev eklenemez."
+    },
+    {
+      "id": "timesheets.1",
+      "scope": "timesheets",
+      "title": "Zaman Kayitlari — Zaman kaydi",
+      "text": "Sol menu → Hizmetler → Zaman Kayitlari. Calisan, proje, istege bagli gorev, calisma tarihi ve saat girilir. Gorev secilen projeye ait olmali; gunluk onayli toplam 24 saati asamaz."
+    },
+    {
+      "id": "timesheets.2",
+      "scope": "timesheets",
+      "title": "Zaman Kayitlari — Onay ve tutar",
+      "text": "Onaya gonder ve Onayla kullanilir. Faturalanabilir=yes ise saat × saatlik tutar hesaplanir. Operasyon Ozeti proje bazinda onayli saat ve tutari gosterir; kendiliginden musteri faturasi kesmez."
+    },
+    {
+      "id": "pos.1",
+      "scope": "pos",
+      "title": "POS Satislari — Kasa sepeti",
+      "text": "Sol menu → Satis → POS Satislari. Urun ara, sepete ekle ve cari sec. Nakit kaydi veya iyzico Sandbox secip Tahsil et kullan. Fiyat ve vergi sunucudan hesaplanir; ayni istek iki satis olusturmaz."
+    },
+    {
+      "id": "pos.2",
+      "scope": "pos",
+      "title": "POS Satislari — Odeme sonucu",
+      "text": "Nakit uygulama icinde kayittir, kart cekimi degildir. iyzico kart bilgileri saglayicinin sayfasinda girilir. Dogrulanmis basarili sonucta stok, fatura ve muhasebe kaydi olusur. Tahsilat Takibi odeme sonucunu sorgular."
+    },
+    {
+      "id": "website.1",
+      "scope": "website",
+      "title": "Web Sayfalari — Surukle birak editor",
+      "text": "Sol menu → Web → Web Sayfalari. Kutuphaneden kapak, metin, urun vitrini, buton, gorsel ve iletisim bloklarini ekleyin. Surukleyerek veya yukari/asagi dugmeleriyle siralayin. Secilen blok ozellikleri sag panelden degisir."
+    },
+    {
+      "id": "website.2",
+      "scope": "website",
+      "title": "Web Sayfalari — Taslak ve yayin",
+      "text": "Kaydet taslagi saklar. Yayinla ziyaretciye gorunen kopyayi gunceller. Yayindaki sayfanin taslagini duzenlemek eski yayini degistirmez; tekrar Yayinla gerekir. Yayindan kaldir ziyaretci erisimini kapatir. Sayfa adresi kucuk harf/rakam/tire icermeli."
+    },
+    {
+      "id": "ecommerce.1",
+      "scope": "ecommerce",
+      "title": "E-ticaret Siparisleri — Magaza ve siparis",
+      "text": "Urunler ekraninda Magazada yayinla=yes olan urunler yayinlanan web sitesinin vitrinine cikar. Ziyaretci sepete urun ekler ve alici/teslimat formunu doldurur. Fiyat istemciden kabul edilmez."
+    },
+    {
+      "id": "ecommerce.2",
+      "scope": "ecommerce",
+      "title": "E-ticaret Siparisleri — Stok rezervasyonu",
+      "text": "Odeme baslatilinca ana depoda stok rezerve edilir. Basarili iyzico sonucu imza, tutar, para birimi ve siparis kimligiyle dogrulanir. Siparis sevkiyata hazir hale gelir; stok fiziksel sevkiyatta duser. Dogrulanmis basarisiz odemede rezervasyon kalkar."
+    },
+    {
+      "id": "events.1",
+      "scope": "events",
+      "title": "Etkinlikler — Etkinlik kaydi",
+      "text": "Sol menu → Pazarlama → Etkinlikler. Tarih, konum ve kontenjan girilir; yayinlaninca ziyaretci formu acilir. Ayni e-posta ikinci kez kaydolamaz; kontenjan dolunca yeni kayit reddedilir. Kontenjan 0/bos ise sinirsizdir."
+    },
+    {
+      "id": "surveys.1",
+      "scope": "surveys",
+      "title": "Anketler — Anket formu",
+      "text": "Sol menu → Pazarlama → Anketler. Her satira bir soru yazin (en fazla 50). Yayina acildiginda ziyaretci ad/e-posta ve serbest metin yanitlarini gonderir. Ayni e-posta ikinci yanit veremez; yanitlar yetkili yonetim ekranindan gorulur."
+    },
+    {
+      "id": "emailMarketing.1",
+      "scope": "emailMarketing",
+      "title": "E-posta Kampanyalari — SMTP ve izin",
+      "text": "Yonetici Ayarlar/Entegrasyonlar ekraninda SMTP/TLS, gonderen ve HTTPS abonelikten cikis adresini tanimlar. E-posta pazarlama izni=yes ve gecerli e-postasi olan cariler kampanyaya dahil edilir."
+    },
+    {
+      "id": "emailMarketing.2",
+      "scope": "emailMarketing",
+      "title": "E-posta Kampanyalari — Kampanya kuyrugu",
+      "text": "Kampanya konusu/duz metni yazilir, Hazirla ardindan Kampanyayi gonder kullanilir. En fazla 500 benzersiz alici kabul edilir. Gonderim durumlari ayrintida incelenir. Ag hatasinda otomatik tekrar gonderilmez; alici teslimi kontrol edilmelidir."
+    },
+    {
+      "id": "warehouses.1",
+      "scope": "warehouses",
+      "title": "Depolar — Depo kartlari",
+      "text": "Sol menu → Stok → Depolar → Yeni kayit. Depo adi ve adresi kaydedilir. Siparis/transfer formlarinda depo secilir; bos birakilan depo ana depoyu belirtir."
+    },
+    {
+      "id": "stockAdjustments.1",
+      "scope": "stockAdjustments",
+      "title": "Stok Sayimi / Acilis — Sayim ve acilis",
+      "text": "Sol menu → Stok → Stok Sayimi / Acilis. Urun, depo ve sayilan miktar girin; Sayimi uygula dugmesini kullanin. Sayilan miktar eklenecek miktar degil, islem sonundaki hedef bakiyedir. Rezerve stokun altina dusulemez."
+    },
+    {
+      "id": "stockTransfers.1",
+      "scope": "stockTransfers",
+      "title": "Depolar Arasi Transfer — Depolar arasi transfer",
+      "text": "Sol menu → Stok → Depolar Arasi Transfer. Urun, miktar ve iki depo secin. Cikis veya giris deposu bos ise ana depo kullanilir; ayni depolar kabul edilmez. Transfer et dugmesi cikis ve girisi atomik yapar; toplam stok sabit kalir."
+    },
+    {
+      "id": "boms.1",
+      "scope": "boms",
+      "title": "Urun Receteleri — Birim urun recetesi",
+      "text": "Sol menu → Uretim → Urun Receteleri. Mamul ve bir adet mamul icin gerekli bilesen/miktarlar tanimlanir. Mamul kendi bileseni olamaz. Uretim emri ac dugmesi bir emri taslak olarak olusturur."
+    },
+    {
+      "id": "equipment.1",
+      "scope": "equipment",
+      "title": "Ekipmanlar — Ekipman karti",
+      "text": "Sol menu → Uretim → Ekipmanlar. Ad, seri no, konum ve sonraki bakim tarihi tutulur. Bakim tamamlandikca son bakim ve toplam maliyet uygulama tarafindan guncellenir."
+    },
+    {
+      "id": "vehicleServices.1",
+      "scope": "vehicleServices",
+      "title": "Arac Servis / Yakit — Servis ve yakit",
+      "text": "Sol menu → Insan Kaynaklari → Arac Servis / Yakit. Arac, tarih, kilometre, tur ve tutar girilir. Tamamla maliyeti araca ekler. Geriye giden kilometre reddedilir."
+    },
+    {
+      "id": "contacts.detail.erisim",
+      "scope": "contacts",
+      "title": "Kisiler — Nereden açılır ve hangi yetki gerekir?",
+      "text": "Sol menü → Satis → Kisiler. Standart roller: sales, purchaser, accountant, hr; admin tüm alanlara erişir. Yönetici modül bazında bu varsayılanı değiştirebilir. Sadece görüntüleme izni olan kullanıcı işlem yapamaz. Menü görünmüyorsa Sistem → Kullanicilar ve Roller ekranını yöneticiniz kontrol etmelidir. Rehberi görme izni kayıtları görme izninden ayrıdır."
+    },
+    {
+      "id": "contacts.detail.alanlar",
+      "scope": "contacts",
+      "title": "Kisiler — Alanlar nasıl doldurulur?",
+      "text": "Ad / unvan: zorunlu.\nE-posta: isteğe bağlı.\nTelefon: isteğe bağlı.\nVergi no: isteğe bağlı.\nAdres: isteğe bağlı.\nTur: zorunlu. Seçenekler: customer, vendor, both.\nSoyadi: isteğe bağlı.\nIl: isteğe bağlı.\nIlce: isteğe bağlı.\nUlke: isteğe bağlı.\nPosta kodu: isteğe bağlı.\ne-Fatura alici etiketi: isteğe bağlı.\nE-posta pazarlama izni: isteğe bağlı. Seçenekler: yes, no."
+    },
+    {
+      "id": "contacts.detail.adimlar",
+      "scope": "contacts",
+      "title": "Kisiler — Adım adım kullanım",
+      "text": "Sol menü → Satis → Kisiler ekranını açın. Yeni kayit düğmesine basın, zorunlu alanları ve ilişkileri tamamlayıp Kaydet kullanın.\nBu kartın ilk kaydından sonra bağlı işlemler ilgili modüllerde yürütülür.\nİşlem düğmeleri kayıt satırında görünür. Ayrıntı panelinde işlem yapıyorsanız panel açık kalıp yeni duruma geçer. Kritik işlemler onay ister. Eski sürüm uyarısında Yenile kullanın; aynı işlemi tekrar tekrar göndermeyin."
+    },
+    {
+      "id": "contacts.detail.dikkat",
+      "scope": "contacts",
+      "title": "Kisiler — Dikkat edilmesi gerekenler ve sık hatalar",
+      "text": "Cari oluşturmak stok, fatura veya ödeme üretmez. Aynı isim yerine doğru kartı seçtiğinizi vergi ve iletişim bilgileriyle kontrol edin."
+    },
+    {
+      "id": "contacts.detail.ornek",
+      "scope": "contacts",
+      "title": "Kisiler — Örnek senaryo ve beklenen sonuç",
+      "text": "Örnek: TEST — Cari adıyla bir kayıt açın; Tür=both seçin. Böylece aynı cari müşteri ve tedarikçi olarak kullanılabilir. E-posta pazarlama iznini gerçekten izin yoksa no bırakın."
+    },
+    {
+      "id": "contacts.detail.kontrol",
+      "scope": "contacts",
+      "title": "Kisiler — İşlemden sonra ne kontrol edilir?",
+      "text": "Belgenin güncel durumu, seçilen ilişkiler ve hesaplanan alanları kontrol edin. Hata çıktığında mesajı okuyun; yetki hatası için yöneticiye başvurun. Kaydı yeniden oluşturmak yerine önce Ara/Yenile ile mevcut işlemi bulun. Örnekler bağımsız senaryolardır; önceki örneğin stok veya bakiyesinin sizin veritabanınızda aynen bulunduğunu varsaymayın."
+    },
+    {
+      "id": "products.detail.erisim",
+      "scope": "products",
+      "title": "Urunler — Nereden açılır ve hangi yetki gerekir?",
+      "text": "Sol menü → Stok → Urunler. Standart roller: sales, purchaser, warehouse; admin tüm alanlara erişir. Yönetici modül bazında bu varsayılanı değiştirebilir. Sadece görüntüleme izni olan kullanıcı işlem yapamaz. Menü görünmüyorsa Sistem → Kullanicilar ve Roller ekranını yöneticiniz kontrol etmelidir. Rehberi görme izni kayıtları görme izninden ayrıdır."
+    },
+    {
+      "id": "products.detail.alanlar",
+      "scope": "products",
+      "title": "Urunler — Alanlar nasıl doldurulur?",
+      "text": "Urun adi: zorunlu.\nStok kodu: zorunlu.\nSatis fiyati: zorunlu. KDV hariç TL tutarı girin; en fazla iki ondalık kullanın.\nAlis maliyeti: zorunlu. KDV hariç TL tutarı girin; en fazla iki ondalık kullanın.\nVergi %: zorunlu.\nMagazada yayinla: isteğe bağlı. Seçenekler: yes, no.\nUrun aciklamasi: isteğe bağlı.\nHTTPS gorsel adresi: isteğe bağlı."
+    },
+    {
+      "id": "products.detail.adimlar",
+      "scope": "products",
+      "title": "Urunler — Adım adım kullanım",
+      "text": "Sol menü → Stok → Urunler ekranını açın. Yeni kayit düğmesine basın, zorunlu alanları ve ilişkileri tamamlayıp Kaydet kullanın.\nBu kartın ilk kaydından sonra bağlı işlemler ilgili modüllerde yürütülür.\nİşlem düğmeleri kayıt satırında görünür. Ayrıntı panelinde işlem yapıyorsanız panel açık kalıp yeni duruma geçer. Kritik işlemler onay ister. Eski sürüm uyarısında Yenile kullanın; aynı işlemi tekrar tekrar göndermeyin."
+    },
+    {
+      "id": "products.detail.dikkat",
+      "scope": "products",
+      "title": "Urunler — Dikkat edilmesi gerekenler ve sık hatalar",
+      "text": "Ürün eklerken benzersiz ve anlamlı stok kodu, doğru ad, KDV hariç fiyat, doğru vergi yüzdesi ve mağazada yayın seçimini kontrol edin. Fiyatlara KDV ekleyerek yazmayın. Başlangıç stoğunu ürün formundan vermeyin; satın alma veya sayım kullanın. Aynı ürüne ikinci kart açmak yerine mevcut kartı bulun. Mağazada yayınla=yes yalnızca yayımlanan mağazada gösterim içindir; ürünü oluşturmak tek başına siteyi yayımlamaz."
+    },
+    {
+      "id": "products.detail.ornek",
+      "scope": "products",
+      "title": "Urunler — Örnek senaryo ve beklenen sonuç",
+      "text": "Örnek: TEST — Kalem; Stok kodu=TEST-KALEM-001; Alış maliyeti=100; Satış fiyatı=150; Vergi %=20. Kaydet sonrasında stok 0 olmalıdır."
+    },
+    {
+      "id": "products.detail.kontrol",
+      "scope": "products",
+      "title": "Urunler — İşlemden sonra ne kontrol edilir?",
+      "text": "Belgenin güncel durumu, seçilen ilişkiler ve hesaplanan alanları kontrol edin. Hata çıktığında mesajı okuyun; yetki hatası için yöneticiye başvurun. Kaydı yeniden oluşturmak yerine önce Ara/Yenile ile mevcut işlemi bulun. Örnekler bağımsız senaryolardır; önceki örneğin stok veya bakiyesinin sizin veritabanınızda aynen bulunduğunu varsaymayın."
+    },
+    {
+      "id": "crm.detail.erisim",
+      "scope": "crm",
+      "title": "CRM / Firsatlar — Nereden açılır ve hangi yetki gerekir?",
+      "text": "Sol menü → Satis → CRM / Firsatlar. Standart roller: sales; admin tüm alanlara erişir. Yönetici modül bazında bu varsayılanı değiştirebilir. Sadece görüntüleme izni olan kullanıcı işlem yapamaz. Menü görünmüyorsa Sistem → Kullanicilar ve Roller ekranını yöneticiniz kontrol etmelidir. Rehberi görme izni kayıtları görme izninden ayrıdır."
+    },
+    {
+      "id": "crm.detail.alanlar",
+      "scope": "crm",
+      "title": "CRM / Firsatlar — Alanlar nasıl doldurulur?",
+      "text": "Baslik: zorunlu.\nAciklama: isteğe bağlı.\nTarih: isteğe bağlı. Takvimden tarih seçin.\nMusteri: isteğe bağlı. Arama kutusuna adını yazın; ardından Kisiler listesinden kaydı seçin. Sadece arama metnini yazmak seçim değildir.\nBeklenen gelir: isteğe bağlı. KDV hariç TL tutarı girin; en fazla iki ondalık kullanın.\nTeklif urunleri: isteğe bağlı. Her satırda ürün, pozitif miktar, KDV hariç birim fiyat ve vergi yüzdesi bulunur."
+    },
+    {
+      "id": "crm.detail.adimlar",
+      "scope": "crm",
+      "title": "CRM / Firsatlar — Adım adım kullanım",
+      "text": "Sol menü → Satis → CRM / Firsatlar ekranını açın. Yeni kayit düğmesine basın, zorunlu alanları ve ilişkileri tamamlayıp Kaydet kullanın.\nTaslak durumunda: Nitelikli.\nTaslak durumunda: Kaybedildi.\nNitelikli durumunda: Teklif.\nNitelikli durumunda: Kaybedildi.\nTeklif durumunda: Satis teklifi olustur.\nTeklif durumunda: Kazanildi.\nTeklif durumunda: Kaybedildi.\nKazanildi durumunda: Satis teklifi olustur.\nİşlem düğmeleri kayıt satırında görünür. Ayrıntı panelinde işlem yapıyorsanız panel açık kalıp yeni duruma geçer. Kritik işlemler onay ister. Eski sürüm uyarısında Yenile kullanın; aynı işlemi tekrar tekrar göndermeyin."
+    },
+    {
+      "id": "crm.detail.dikkat",
+      "scope": "crm",
+      "title": "CRM / Firsatlar — Dikkat edilmesi gerekenler ve sık hatalar",
+      "text": "Fırsatın kazanılması tek başına stok veya muhasebe hareketi oluşturmaz. Satış teklifi için cari ve ürün satırları gereklidir; aynı fırsat ikinci kez teklife dönüşmez."
+    },
+    {
+      "id": "crm.detail.ornek",
+      "scope": "crm",
+      "title": "CRM / Firsatlar — Örnek senaryo ve beklenen sonuç",
+      "text": "Örnek: TEST — Fırsat için müşteri, ürün ve tutar belirleyin. Nitelikli/teklif aşamalarından ilerleyip Satis teklifi olustur kullanın. Satış siparişlerinde bağlantılı kayıt görünmelidir."
+    },
+    {
+      "id": "crm.detail.kontrol",
+      "scope": "crm",
+      "title": "CRM / Firsatlar — İşlemden sonra ne kontrol edilir?",
+      "text": "Belgenin güncel durumu, seçilen ilişkiler ve hesaplanan alanları kontrol edin. Hata çıktığında mesajı okuyun; yetki hatası için yöneticiye başvurun. Kaydı yeniden oluşturmak yerine önce Ara/Yenile ile mevcut işlemi bulun. Örnekler bağımsız senaryolardır; önceki örneğin stok veya bakiyesinin sizin veritabanınızda aynen bulunduğunu varsaymayın."
+    },
+    {
+      "id": "sales.detail.erisim",
+      "scope": "sales",
+      "title": "Satis Siparisleri — Nereden açılır ve hangi yetki gerekir?",
+      "text": "Sol menü → Satis → Satis Siparisleri. Standart roller: sales; admin tüm alanlara erişir. Yönetici modül bazında bu varsayılanı değiştirebilir. Sadece görüntüleme izni olan kullanıcı işlem yapamaz. Menü görünmüyorsa Sistem → Kullanicilar ve Roller ekranını yöneticiniz kontrol etmelidir. Rehberi görme izni kayıtları görme izninden ayrıdır."
+    },
+    {
+      "id": "sales.detail.alanlar",
+      "scope": "sales",
+      "title": "Satis Siparisleri — Alanlar nasıl doldurulur?",
+      "text": "Belge adi: zorunlu.\nCari: zorunlu. Arama kutusuna adını yazın; ardından Kisiler listesinden kaydı seçin. Sadece arama metnini yazmak seçim değildir.\nUrun satirlari: zorunlu. Her satırda ürün, pozitif miktar, KDV hariç birim fiyat ve vergi yüzdesi bulunur.\nDepo (bos: ana depo): isteğe bağlı. Arama kutusuna adını yazın; ardından Depolar listesinden kaydı seçin. Sadece arama metnini yazmak seçim değildir."
+    },
+    {
+      "id": "sales.detail.adimlar",
+      "scope": "sales",
+      "title": "Satis Siparisleri — Adım adım kullanım",
+      "text": "Sol menü → Satis → Satis Siparisleri ekranını açın. Yeni kayit düğmesine basın, zorunlu alanları ve ilişkileri tamamlayıp Kaydet kullanın.\nTaslak durumunda: Onayla.\nOnaylandi durumunda: Sevk et.\nSevk edildi durumunda: Fatura olustur.\nİşlem düğmeleri kayıt satırında görünür. Ayrıntı panelinde işlem yapıyorsanız panel açık kalıp yeni duruma geçer. Kritik işlemler onay ister. Eski sürüm uyarısında Yenile kullanın; aynı işlemi tekrar tekrar göndermeyin."
+    },
+    {
+      "id": "sales.detail.dikkat",
+      "scope": "sales",
+      "title": "Satis Siparisleri — Dikkat edilmesi gerekenler ve sık hatalar",
+      "text": "Siparişi kaydetmek/onaylamak stoğu düşürmez; fiziksel stok Sevk et ile değişir. Sevk için depo işlem yetkisi ve yeterli kullanılabilir stok gerekir. Onaydan sonra satırları değiştirmeyin. Fatura oluşturmak tahsilat yapmaz; muhasebeci fatura ve ödeme adımını yürütür."
+    },
+    {
+      "id": "sales.detail.ornek",
+      "scope": "sales",
+      "title": "Satis Siparisleri — Örnek senaryo ve beklenen sonuç",
+      "text": "Örnek: TEST — Satış; TEST — Cari; TEST — Kalem 2 adet, birim fiyat 150, vergi %20. Ara toplam 300, vergi 60, toplam 360 TL. Onayla → Sevk et sonrasında 10 adet stok 8’e iner; Fatura olustur taslak müşteri faturası açar."
+    },
+    {
+      "id": "sales.detail.kontrol",
+      "scope": "sales",
+      "title": "Satis Siparisleri — İşlemden sonra ne kontrol edilir?",
+      "text": "Belgenin güncel durumu, seçilen ilişkiler ve hesaplanan alanları kontrol edin. Hata çıktığında mesajı okuyun; yetki hatası için yöneticiye başvurun. Kaydı yeniden oluşturmak yerine önce Ara/Yenile ile mevcut işlemi bulun. Örnekler bağımsız senaryolardır; önceki örneğin stok veya bakiyesinin sizin veritabanınızda aynen bulunduğunu varsaymayın."
+    },
+    {
+      "id": "purchases.detail.erisim",
+      "scope": "purchases",
+      "title": "Satin Alma — Nereden açılır ve hangi yetki gerekir?",
+      "text": "Sol menü → Tedarik → Satin Alma. Standart roller: purchaser; admin tüm alanlara erişir. Yönetici modül bazında bu varsayılanı değiştirebilir. Sadece görüntüleme izni olan kullanıcı işlem yapamaz. Menü görünmüyorsa Sistem → Kullanicilar ve Roller ekranını yöneticiniz kontrol etmelidir. Rehberi görme izni kayıtları görme izninden ayrıdır."
+    },
+    {
+      "id": "purchases.detail.alanlar",
+      "scope": "purchases",
+      "title": "Satin Alma — Alanlar nasıl doldurulur?",
+      "text": "Belge adi: zorunlu.\nCari: zorunlu. Arama kutusuna adını yazın; ardından Kisiler listesinden kaydı seçin. Sadece arama metnini yazmak seçim değildir.\nUrun satirlari: zorunlu. Her satırda ürün, pozitif miktar, KDV hariç birim fiyat ve vergi yüzdesi bulunur.\nDepo (bos: ana depo): isteğe bağlı. Arama kutusuna adını yazın; ardından Depolar listesinden kaydı seçin. Sadece arama metnini yazmak seçim değildir."
+    },
+    {
+      "id": "purchases.detail.adimlar",
+      "scope": "purchases",
+      "title": "Satin Alma — Adım adım kullanım",
+      "text": "Sol menü → Tedarik → Satin Alma ekranını açın. Yeni kayit düğmesine basın, zorunlu alanları ve ilişkileri tamamlayıp Kaydet kullanın.\nTaslak durumunda: Onayla.\nOnaylandi durumunda: Teslim al.\nTeslim alindi durumunda: Tedarikci faturasi.\nİşlem düğmeleri kayıt satırında görünür. Ayrıntı panelinde işlem yapıyorsanız panel açık kalıp yeni duruma geçer. Kritik işlemler onay ister. Eski sürüm uyarısında Yenile kullanın; aynı işlemi tekrar tekrar göndermeyin."
+    },
+    {
+      "id": "purchases.detail.dikkat",
+      "scope": "purchases",
+      "title": "Satin Alma — Dikkat edilmesi gerekenler ve sık hatalar",
+      "text": "Taslak kaydetmek veya yalnızca onaylamak stok girişi değildir. Teslim al için Stok/Depolar Arası Transfer modülünde de işlem yetkisi gerekir. Teslim alınan siparişi tekrar teslim almayın; aynı hareket iki kez işlenmemelidir. Fatura oluşturmak muhasebeleştirme veya banka ödemesi değildir."
+    },
+    {
+      "id": "purchases.detail.ornek",
+      "scope": "purchases",
+      "title": "Satin Alma — Örnek senaryo ve beklenen sonuç",
+      "text": "Örnek: TEST — Satın Alma; TEST — Cari; TEST — Kalem 10 adet, birim fiyat 100 ve vergi %20. Ara toplam 1.000, vergi 200, toplam 1.200 TL olur. Onayla → Teslim al sonrasında ana depodaki stok 0’dan 10’a çıkar. Tedarikci faturasi ile taslak fatura oluşur."
+    },
+    {
+      "id": "purchases.detail.kontrol",
+      "scope": "purchases",
+      "title": "Satin Alma — İşlemden sonra ne kontrol edilir?",
+      "text": "Belgenin güncel durumu, seçilen ilişkiler ve hesaplanan alanları kontrol edin. Hata çıktığında mesajı okuyun; yetki hatası için yöneticiye başvurun. Kaydı yeniden oluşturmak yerine önce Ara/Yenile ile mevcut işlemi bulun. Örnekler bağımsız senaryolardır; önceki örneğin stok veya bakiyesinin sizin veritabanınızda aynen bulunduğunu varsaymayın."
+    },
+    {
+      "id": "invoices.detail.erisim",
+      "scope": "invoices",
+      "title": "Faturalar — Nereden açılır ve hangi yetki gerekir?",
+      "text": "Sol menü → Muhasebe → Faturalar. Standart roller: accountant; admin tüm alanlara erişir. Yönetici modül bazında bu varsayılanı değiştirebilir. Sadece görüntüleme izni olan kullanıcı işlem yapamaz. Menü görünmüyorsa Sistem → Kullanicilar ve Roller ekranını yöneticiniz kontrol etmelidir. Rehberi görme izni kayıtları görme izninden ayrıdır."
+    },
+    {
+      "id": "invoices.detail.alanlar",
+      "scope": "invoices",
+      "title": "Faturalar — Alanlar nasıl doldurulur?",
+      "text": "Belge adi: zorunlu.\nCari: zorunlu. Arama kutusuna adını yazın; ardından Kisiler listesinden kaydı seçin. Sadece arama metnini yazmak seçim değildir.\nUrun satirlari: zorunlu. Her satırda ürün, pozitif miktar, KDV hariç birim fiyat ve vergi yüzdesi bulunur.\nFatura turu: zorunlu. Seçenekler: customer, vendor."
+    },
+    {
+      "id": "invoices.detail.adimlar",
+      "scope": "invoices",
+      "title": "Faturalar — Adım adım kullanım",
+      "text": "Sol menü → Muhasebe → Faturalar ekranını açın. Yeni kayit düğmesine basın, zorunlu alanları ve ilişkileri tamamlayıp Kaydet kullanın.\nTaslak durumunda: Muhasebelestir.\nMuhasebelesti durumunda: Odemeyi kaydet.\nMuhasebelesti durumunda: Ters kayit.\nİşlem düğmeleri kayıt satırında görünür. Ayrıntı panelinde işlem yapıyorsanız panel açık kalıp yeni duruma geçer. Kritik işlemler onay ister. Eski sürüm uyarısında Yenile kullanın; aynı işlemi tekrar tekrar göndermeyin."
+    },
+    {
+      "id": "invoices.detail.dikkat",
+      "scope": "invoices",
+      "title": "Faturalar — Dikkat edilmesi gerekenler ve sık hatalar",
+      "text": "Sipariş faturası zaten oluşturulduysa Yeni kayit ile ikinci kez kesmeyin. customer müşteri, vendor tedarikçi faturasıdır. Taslağa ödeme kaydı yapılamaz. Ödeme düğmesi manuel muhasebe kaydıdır, bankadan para göndermez veya kart çekmez. Ödenmiş faturaya ikinci ödeme uygulanmamalıdır. NES işlemleri ayrı test hesabı ve şirket/vergi bilgilerinin tamamlanmasını gerektirir; yerel çıktı resmî e-fatura değildir."
+    },
+    {
+      "id": "invoices.detail.ornek",
+      "scope": "invoices",
+      "title": "Faturalar — Örnek senaryo ve beklenen sonuç",
+      "text": "Örnek: satıştan oluşan 360 TL taslak faturayı Muhasebelestir yapın; fatura fişinin borç ve alacak toplamı ayrı ayrı 360 TL olmalı. Odemeyi kaydet sonrasında durum Ödendi olur ve ayrıca ödeme fişi oluşur."
+    },
+    {
+      "id": "invoices.detail.kontrol",
+      "scope": "invoices",
+      "title": "Faturalar — İşlemden sonra ne kontrol edilir?",
+      "text": "Belgenin güncel durumu, seçilen ilişkiler ve hesaplanan alanları kontrol edin. Hata çıktığında mesajı okuyun; yetki hatası için yöneticiye başvurun. Kaydı yeniden oluşturmak yerine önce Ara/Yenile ile mevcut işlemi bulun. Örnekler bağımsız senaryolardır; önceki örneğin stok veya bakiyesinin sizin veritabanınızda aynen bulunduğunu varsaymayın."
+    },
+    {
+      "id": "inventory.detail.erisim",
+      "scope": "inventory",
+      "title": "Stok Hareketleri — Nereden açılır ve hangi yetki gerekir?",
+      "text": "Sol menü → Stok → Stok Hareketleri. Standart roller: warehouse; admin tüm alanlara erişir. Yönetici modül bazında bu varsayılanı değiştirebilir. Sadece görüntüleme izni olan kullanıcı işlem yapamaz. Menü görünmüyorsa Sistem → Kullanicilar ve Roller ekranını yöneticiniz kontrol etmelidir. Rehberi görme izni kayıtları görme izninden ayrıdır."
+    },
+    {
+      "id": "inventory.detail.alanlar",
+      "scope": "inventory",
+      "title": "Stok Hareketleri — Alanlar nasıl doldurulur?",
+      "text": "Bu ekran iş akışlarından otomatik oluşan kayıtları gösterir; elle kayıt ekleme alanı yoktur."
+    },
+    {
+      "id": "inventory.detail.adimlar",
+      "scope": "inventory",
+      "title": "Stok Hareketleri — Adım adım kullanım",
+      "text": "Sol menü → Stok → Stok Hareketleri ekranını açın. Kaydı adından arayın, Ayrinti ile kaynak ve satırlarını inceleyin.\nBu kartın ilk kaydından sonra bağlı işlemler ilgili modüllerde yürütülür.\nİşlem düğmeleri kayıt satırında görünür. Ayrıntı panelinde işlem yapıyorsanız panel açık kalıp yeni duruma geçer. Kritik işlemler onay ister. Eski sürüm uyarısında Yenile kullanın; aynı işlemi tekrar tekrar göndermeyin."
+    },
+    {
+      "id": "inventory.detail.dikkat",
+      "scope": "inventory",
+      "title": "Stok Hareketleri — Dikkat edilmesi gerekenler ve sık hatalar",
+      "text": "Stok hareketleri salt okunurdur. Fatura oluşturmak, ödemek veya taslak sipariş kaydetmek stok hareketi üretmez. Kayıtları ve kaynak belgeyi birlikte kontrol edin."
+    },
+    {
+      "id": "inventory.detail.ornek",
+      "scope": "inventory",
+      "title": "Stok Hareketleri — Örnek senaryo ve beklenen sonuç",
+      "text": "Örnek: 10 adet satın alma girişi ve 2 adet satış çıkışı sonrasında hareketler +10 ve -2, ürün bakiyesi 8 olmalıdır."
+    },
+    {
+      "id": "inventory.detail.kontrol",
+      "scope": "inventory",
+      "title": "Stok Hareketleri — İşlemden sonra ne kontrol edilir?",
+      "text": "Kaynak belge ve otomatik satırları kontrol edin. Hata çıktığında mesajı okuyun; yetki hatası için yöneticiye başvurun. Kaydı yeniden oluşturmak yerine önce Ara/Yenile ile mevcut işlemi bulun. Örnekler bağımsız senaryolardır; önceki örneğin stok veya bakiyesinin sizin veritabanınızda aynen bulunduğunu varsaymayın."
+    },
+    {
+      "id": "journal.detail.erisim",
+      "scope": "journal",
+      "title": "Muhasebe Fisleri — Nereden açılır ve hangi yetki gerekir?",
+      "text": "Sol menü → Muhasebe → Muhasebe Fisleri. Standart roller: accountant; admin tüm alanlara erişir. Yönetici modül bazında bu varsayılanı değiştirebilir. Sadece görüntüleme izni olan kullanıcı işlem yapamaz. Menü görünmüyorsa Sistem → Kullanicilar ve Roller ekranını yöneticiniz kontrol etmelidir. Rehberi görme izni kayıtları görme izninden ayrıdır."
+    },
+    {
+      "id": "journal.detail.alanlar",
+      "scope": "journal",
+      "title": "Muhasebe Fisleri — Alanlar nasıl doldurulur?",
+      "text": "Bu ekran iş akışlarından otomatik oluşan kayıtları gösterir; elle kayıt ekleme alanı yoktur."
+    },
+    {
+      "id": "journal.detail.adimlar",
+      "scope": "journal",
+      "title": "Muhasebe Fisleri — Adım adım kullanım",
+      "text": "Sol menü → Muhasebe → Muhasebe Fisleri ekranını açın. Kaydı adından arayın, Ayrinti ile kaynak ve satırlarını inceleyin.\nBu kartın ilk kaydından sonra bağlı işlemler ilgili modüllerde yürütülür.\nİşlem düğmeleri kayıt satırında görünür. Ayrıntı panelinde işlem yapıyorsanız panel açık kalıp yeni duruma geçer. Kritik işlemler onay ister. Eski sürüm uyarısında Yenile kullanın; aynı işlemi tekrar tekrar göndermeyin."
+    },
+    {
+      "id": "journal.detail.dikkat",
+      "scope": "journal",
+      "title": "Muhasebe Fisleri — Dikkat edilmesi gerekenler ve sık hatalar",
+      "text": "Salt okunur defterdir. Borç/alacak dengesizliği veya aynı kaynak için yinelenen fiş görürseniz yeni fiş ekleyerek düzeltmeye çalışmayın; ilgili fatura iş akışını inceleyin."
+    },
+    {
+      "id": "journal.detail.ornek",
+      "scope": "journal",
+      "title": "Muhasebe Fisleri — Örnek senaryo ve beklenen sonuç",
+      "text": "Örnek: TEST — Satış / invoice fişini açın; müşteri alacağı 360 TL borç, satış geliri 300 TL ve hesaplanan KDV 60 TL alacak olmalıdır. Ödeme fişi faturadan ayrı kayıttır."
+    },
+    {
+      "id": "journal.detail.kontrol",
+      "scope": "journal",
+      "title": "Muhasebe Fisleri — İşlemden sonra ne kontrol edilir?",
+      "text": "Kaynak belge ve otomatik satırları kontrol edin. Hata çıktığında mesajı okuyun; yetki hatası için yöneticiye başvurun. Kaydı yeniden oluşturmak yerine önce Ara/Yenile ile mevcut işlemi bulun. Örnekler bağımsız senaryolardır; önceki örneğin stok veya bakiyesinin sizin veritabanınızda aynen bulunduğunu varsaymayın."
+    },
+    {
+      "id": "manufacturing.detail.erisim",
+      "scope": "manufacturing",
+      "title": "Uretim Emirleri — Nereden açılır ve hangi yetki gerekir?",
+      "text": "Sol menü → Uretim → Uretim Emirleri. Standart roller: production; admin tüm alanlara erişir. Yönetici modül bazında bu varsayılanı değiştirebilir. Sadece görüntüleme izni olan kullanıcı işlem yapamaz. Menü görünmüyorsa Sistem → Kullanicilar ve Roller ekranını yöneticiniz kontrol etmelidir. Rehberi görme izni kayıtları görme izninden ayrıdır."
+    },
+    {
+      "id": "manufacturing.detail.alanlar",
+      "scope": "manufacturing",
+      "title": "Uretim Emirleri — Alanlar nasıl doldurulur?",
+      "text": "Baslik: zorunlu.\nAciklama: isteğe bağlı.\nTarih: isteğe bağlı. Takvimden tarih seçin.\nMamul: zorunlu. Arama kutusuna adını yazın; ardından Urunler listesinden kaydı seçin. Sadece arama metnini yazmak seçim değildir.\nMiktar: zorunlu.\nRecete bilesenleri: zorunlu. Bileşen ürününü ve birim mamul için gereken pozitif miktarı girin.\nUrun recetesi: isteğe bağlı. Arama kutusuna adını yazın; ardından Urun Receteleri listesinden kaydı seçin. Sadece arama metnini yazmak seçim değildir.\nDepo: isteğe bağlı. Arama kutusuna adını yazın; ardından Depolar listesinden kaydı seçin. Sadece arama metnini yazmak seçim değildir."
+    },
+    {
+      "id": "manufacturing.detail.adimlar",
+      "scope": "manufacturing",
+      "title": "Uretim Emirleri — Adım adım kullanım",
+      "text": "Sol menü → Uretim → Uretim Emirleri ekranını açın. Yeni kayit düğmesine basın, zorunlu alanları ve ilişkileri tamamlayıp Kaydet kullanın.\nTaslak durumunda: Onayla.\nOnaylandi durumunda: Uretimi tamamla.\nİşlem düğmeleri kayıt satırında görünür. Ayrıntı panelinde işlem yapıyorsanız panel açık kalıp yeni duruma geçer. Kritik işlemler onay ister. Eski sürüm uyarısında Yenile kullanın; aynı işlemi tekrar tekrar göndermeyin."
+    },
+    {
+      "id": "manufacturing.detail.dikkat",
+      "scope": "manufacturing",
+      "title": "Uretim Emirleri — Dikkat edilmesi gerekenler ve sık hatalar",
+      "text": "Onaylamak tüketim değildir. Bileşenlerden biri yetersizse hiçbir bileşen tüketilmemeli ve mamul girişi olmamalıdır. Doğru üretim deposunu kontrol edin."
+    },
+    {
+      "id": "manufacturing.detail.ornek",
+      "scope": "manufacturing",
+      "title": "Uretim Emirleri — Örnek senaryo ve beklenen sonuç",
+      "text": "Örnek: 2 kalem tüketen reçeteden 1 set üretin. Onayla → Uretimi tamamla sonrasında kalem 2 azalır, set 1 artar."
+    },
+    {
+      "id": "manufacturing.detail.kontrol",
+      "scope": "manufacturing",
+      "title": "Uretim Emirleri — İşlemden sonra ne kontrol edilir?",
+      "text": "Belgenin güncel durumu, seçilen ilişkiler ve hesaplanan alanları kontrol edin. Hata çıktığında mesajı okuyun; yetki hatası için yöneticiye başvurun. Kaydı yeniden oluşturmak yerine önce Ara/Yenile ile mevcut işlemi bulun. Örnekler bağımsız senaryolardır; önceki örneğin stok veya bakiyesinin sizin veritabanınızda aynen bulunduğunu varsaymayın."
+    },
+    {
+      "id": "maintenance.detail.erisim",
+      "scope": "maintenance",
+      "title": "Bakim — Nereden açılır ve hangi yetki gerekir?",
+      "text": "Sol menü → Uretim → Bakim. Standart roller: production; admin tüm alanlara erişir. Yönetici modül bazında bu varsayılanı değiştirebilir. Sadece görüntüleme izni olan kullanıcı işlem yapamaz. Menü görünmüyorsa Sistem → Kullanicilar ve Roller ekranını yöneticiniz kontrol etmelidir. Rehberi görme izni kayıtları görme izninden ayrıdır."
+    },
+    {
+      "id": "maintenance.detail.alanlar",
+      "scope": "maintenance",
+      "title": "Bakim — Alanlar nasıl doldurulur?",
+      "text": "Baslik: zorunlu.\nAciklama: isteğe bağlı.\nTarih: isteğe bağlı. Takvimden tarih seçin.\nEkipman: isteğe bağlı.\nTeknisyen: isteğe bağlı.\nEkipman: zorunlu. Arama kutusuna adını yazın; ardından Ekipmanlar listesinden kaydı seçin. Sadece arama metnini yazmak seçim değildir.\nOncelik: zorunlu. Seçenekler: normal, high, urgent.\nBakim maliyeti: isteğe bağlı. KDV hariç TL tutarı girin; en fazla iki ondalık kullanın."
+    },
+    {
+      "id": "maintenance.detail.adimlar",
+      "scope": "maintenance",
+      "title": "Bakim — Adım adım kullanım",
+      "text": "Sol menü → Uretim → Bakim ekranını açın. Yeni kayit düğmesine basın, zorunlu alanları ve ilişkileri tamamlayıp Kaydet kullanın.\nTaslak durumunda: Baslat.\nDevam ediyor durumunda: Tamamla.\nİşlem düğmeleri kayıt satırında görünür. Ayrıntı panelinde işlem yapıyorsanız panel açık kalıp yeni duruma geçer. Kritik işlemler onay ister. Eski sürüm uyarısında Yenile kullanın; aynı işlemi tekrar tekrar göndermeyin."
+    },
+    {
+      "id": "maintenance.detail.dikkat",
+      "scope": "maintenance",
+      "title": "Bakim — Dikkat edilmesi gerekenler ve sık hatalar",
+      "text": "Gerekli ekipman ilişkisini seçin; serbest açıklama ekipman seçiminin yerine geçmez. Bakım maliyeti otomatik fatura veya muhasebe fişi üretmez."
+    },
+    {
+      "id": "maintenance.detail.ornek",
+      "scope": "maintenance",
+      "title": "Bakim — Örnek senaryo ve beklenen sonuç",
+      "text": "Örnek: TEST — Makine için 50 TL maliyetli bakım oluşturun. Baslat → Tamamla sonrasında ekipman toplam bakım maliyeti 50 TL artmalıdır."
+    },
+    {
+      "id": "maintenance.detail.kontrol",
+      "scope": "maintenance",
+      "title": "Bakim — İşlemden sonra ne kontrol edilir?",
+      "text": "Belgenin güncel durumu, seçilen ilişkiler ve hesaplanan alanları kontrol edin. Hata çıktığında mesajı okuyun; yetki hatası için yöneticiye başvurun. Kaydı yeniden oluşturmak yerine önce Ara/Yenile ile mevcut işlemi bulun. Örnekler bağımsız senaryolardır; önceki örneğin stok veya bakiyesinin sizin veritabanınızda aynen bulunduğunu varsaymayın."
+    },
+    {
+      "id": "employees.detail.erisim",
+      "scope": "employees",
+      "title": "Calisanlar — Nereden açılır ve hangi yetki gerekir?",
+      "text": "Sol menü → Insan Kaynaklari → Calisanlar. Standart roller: hr; admin tüm alanlara erişir. Yönetici modül bazında bu varsayılanı değiştirebilir. Sadece görüntüleme izni olan kullanıcı işlem yapamaz. Menü görünmüyorsa Sistem → Kullanicilar ve Roller ekranını yöneticiniz kontrol etmelidir. Rehberi görme izni kayıtları görme izninden ayrıdır."
+    },
+    {
+      "id": "employees.detail.alanlar",
+      "scope": "employees",
+      "title": "Calisanlar — Alanlar nasıl doldurulur?",
+      "text": "Ad soyad: zorunlu.\nIs e-postasi: isteğe bağlı.\nDepartman: isteğe bağlı.\nGorev: isteğe bağlı.\nYonetici: isteğe bağlı.\nYillik izin hakki (gun): isteğe bağlı."
+    },
+    {
+      "id": "employees.detail.adimlar",
+      "scope": "employees",
+      "title": "Calisanlar — Adım adım kullanım",
+      "text": "Sol menü → Insan Kaynaklari → Calisanlar ekranını açın. Yeni kayit düğmesine basın, zorunlu alanları ve ilişkileri tamamlayıp Kaydet kullanın.\nDevam ediyor durumunda: Arsivle.\nİşlem düğmeleri kayıt satırında görünür. Ayrıntı panelinde işlem yapıyorsanız panel açık kalıp yeni duruma geçer. Kritik işlemler onay ister. Eski sürüm uyarısında Yenile kullanın; aynı işlemi tekrar tekrar göndermeyin."
+    },
+    {
+      "id": "employees.detail.dikkat",
+      "scope": "employees",
+      "title": "Calisanlar — Dikkat edilmesi gerekenler ve sık hatalar",
+      "text": "Bu sürüm bordro veya mevzuata göre otomatik izin hak edişi hesaplamaz. İzin hakkını kullanılan iznin altına indirmeyin; kullanılan günler onay/iptal akışından hesaplanır. Gerçek kişisel veri yerine demo verisi kullanın."
+    },
+    {
+      "id": "employees.detail.ornek",
+      "scope": "employees",
+      "title": "Calisanlar — Örnek senaryo ve beklenen sonuç",
+      "text": "Örnek: TEST — Çalışan için departman ve görev girin; yıllık izin hakkını 20 yapın. Yeni çalışanın kullanılan izni 0 olmalıdır."
+    },
+    {
+      "id": "employees.detail.kontrol",
+      "scope": "employees",
+      "title": "Calisanlar — İşlemden sonra ne kontrol edilir?",
+      "text": "Belgenin güncel durumu, seçilen ilişkiler ve hesaplanan alanları kontrol edin. Hata çıktığında mesajı okuyun; yetki hatası için yöneticiye başvurun. Kaydı yeniden oluşturmak yerine önce Ara/Yenile ile mevcut işlemi bulun. Örnekler bağımsız senaryolardır; önceki örneğin stok veya bakiyesinin sizin veritabanınızda aynen bulunduğunu varsaymayın."
+    },
+    {
+      "id": "attendance.detail.erisim",
+      "scope": "attendance",
+      "title": "Puantaj — Nereden açılır ve hangi yetki gerekir?",
+      "text": "Sol menü → Insan Kaynaklari → Puantaj. Standart roller: hr; admin tüm alanlara erişir. Yönetici modül bazında bu varsayılanı değiştirebilir. Sadece görüntüleme izni olan kullanıcı işlem yapamaz. Menü görünmüyorsa Sistem → Kullanicilar ve Roller ekranını yöneticiniz kontrol etmelidir. Rehberi görme izni kayıtları görme izninden ayrıdır."
+    },
+    {
+      "id": "attendance.detail.alanlar",
+      "scope": "attendance",
+      "title": "Puantaj — Alanlar nasıl doldurulur?",
+      "text": "Kayit adi: zorunlu.\nCalisan: zorunlu. Arama kutusuna adını yazın; ardından Calisanlar listesinden kaydı seçin. Sadece arama metnini yazmak seçim değildir.\nGiris: zorunlu. Tarih ve saati birlikte seçin.\nCikis: isteğe bağlı. Tarih ve saati birlikte seçin."
+    },
+    {
+      "id": "attendance.detail.adimlar",
+      "scope": "attendance",
+      "title": "Puantaj — Adım adım kullanım",
+      "text": "Sol menü → Insan Kaynaklari → Puantaj ekranını açın. Yeni kayit düğmesine basın, zorunlu alanları ve ilişkileri tamamlayıp Kaydet kullanın.\nDevam ediyor durumunda: Cikis yap.\nİşlem düğmeleri kayıt satırında görünür. Ayrıntı panelinde işlem yapıyorsanız panel açık kalıp yeni duruma geçer. Kritik işlemler onay ister. Eski sürüm uyarısında Yenile kullanın; aynı işlemi tekrar tekrar göndermeyin."
+    },
+    {
+      "id": "attendance.detail.dikkat",
+      "scope": "attendance",
+      "title": "Puantaj — Dikkat edilmesi gerekenler ve sık hatalar",
+      "text": "Aynı çalışan için iki açık puantaj olamaz. Çıkış girişten önce olamaz; tek kayıt en fazla 24 saat kapsar. Molalar otomatik düşülmez."
+    },
+    {
+      "id": "attendance.detail.ornek",
+      "scope": "attendance",
+      "title": "Puantaj — Örnek senaryo ve beklenen sonuç",
+      "text": "Örnek: aynı tarihte 09:00 giriş, 17:30 çıkış kaydedip Cikis yap kullanın. Süre 8,5 saat olmalıdır."
+    },
+    {
+      "id": "attendance.detail.kontrol",
+      "scope": "attendance",
+      "title": "Puantaj — İşlemden sonra ne kontrol edilir?",
+      "text": "Belgenin güncel durumu, seçilen ilişkiler ve hesaplanan alanları kontrol edin. Hata çıktığında mesajı okuyun; yetki hatası için yöneticiye başvurun. Kaydı yeniden oluşturmak yerine önce Ara/Yenile ile mevcut işlemi bulun. Örnekler bağımsız senaryolardır; önceki örneğin stok veya bakiyesinin sizin veritabanınızda aynen bulunduğunu varsaymayın."
+    },
+    {
+      "id": "leave.detail.erisim",
+      "scope": "leave",
+      "title": "Izin Talepleri — Nereden açılır ve hangi yetki gerekir?",
+      "text": "Sol menü → Insan Kaynaklari → Izin Talepleri. Standart roller: hr; admin tüm alanlara erişir. Yönetici modül bazında bu varsayılanı değiştirebilir. Sadece görüntüleme izni olan kullanıcı işlem yapamaz. Menü görünmüyorsa Sistem → Kullanicilar ve Roller ekranını yöneticiniz kontrol etmelidir. Rehberi görme izni kayıtları görme izninden ayrıdır."
+    },
+    {
+      "id": "leave.detail.alanlar",
+      "scope": "leave",
+      "title": "Izin Talepleri — Alanlar nasıl doldurulur?",
+      "text": "Baslik: zorunlu.\nAciklama: isteğe bağlı.\nTarih: isteğe bağlı. Takvimden tarih seçin.\nCalisan: zorunlu. Arama kutusuna adını yazın; ardından Calisanlar listesinden kaydı seçin. Sadece arama metnini yazmak seçim değildir.\nBaslangic: zorunlu. Takvimden tarih seçin.\nBitis: zorunlu. Takvimden tarih seçin."
+    },
+    {
+      "id": "leave.detail.adimlar",
+      "scope": "leave",
+      "title": "Izin Talepleri — Adım adım kullanım",
+      "text": "Sol menü → Insan Kaynaklari → Izin Talepleri ekranını açın. Yeni kayit düğmesine basın, zorunlu alanları ve ilişkileri tamamlayıp Kaydet kullanın.\nTaslak durumunda: Onaya gonder.\nOnay bekliyor durumunda: Onayla.\nOnay bekliyor durumunda: Reddet.\nOnaylandi durumunda: Izni iptal et.\nİşlem düğmeleri kayıt satırında görünür. Ayrıntı panelinde işlem yapıyorsanız panel açık kalıp yeni duruma geçer. Kritik işlemler onay ister. Eski sürüm uyarısında Yenile kullanın; aynı işlemi tekrar tekrar göndermeyin."
+    },
+    {
+      "id": "leave.detail.dikkat",
+      "scope": "leave",
+      "title": "Izin Talepleri — Dikkat edilmesi gerekenler ve sık hatalar",
+      "text": "Hafta sonu günleri sayılmaz; resmî tatil takvimi uygulanmaz. Çakışan onaylı izin ve yetersiz bakiye reddedilir. İzin iptali silme değildir; geçmiş kayıt korunur."
+    },
+    {
+      "id": "leave.detail.ornek",
+      "scope": "leave",
+      "title": "Izin Talepleri — Örnek senaryo ve beklenen sonuç",
+      "text": "Örnek: 20 günlük hakkı olan TEST — Çalışan için iki hafta içi günü kapsayan izin oluşturup Onaya gonder → Onayla yapın. Kullanılan gün 2, kalan 18 olmalı; Izni iptal et ile kullanılan gün 0’a dönmelidir."
+    },
+    {
+      "id": "leave.detail.kontrol",
+      "scope": "leave",
+      "title": "Izin Talepleri — İşlemden sonra ne kontrol edilir?",
+      "text": "Belgenin güncel durumu, seçilen ilişkiler ve hesaplanan alanları kontrol edin. Hata çıktığında mesajı okuyun; yetki hatası için yöneticiye başvurun. Kaydı yeniden oluşturmak yerine önce Ara/Yenile ile mevcut işlemi bulun. Örnekler bağımsız senaryolardır; önceki örneğin stok veya bakiyesinin sizin veritabanınızda aynen bulunduğunu varsaymayın."
+    },
+    {
+      "id": "recruitment.detail.erisim",
+      "scope": "recruitment",
+      "title": "Ise Alim — Nereden açılır ve hangi yetki gerekir?",
+      "text": "Sol menü → Insan Kaynaklari → Ise Alim. Standart roller: hr; admin tüm alanlara erişir. Yönetici modül bazında bu varsayılanı değiştirebilir. Sadece görüntüleme izni olan kullanıcı işlem yapamaz. Menü görünmüyorsa Sistem → Kullanicilar ve Roller ekranını yöneticiniz kontrol etmelidir. Rehberi görme izni kayıtları görme izninden ayrıdır."
+    },
+    {
+      "id": "recruitment.detail.alanlar",
+      "scope": "recruitment",
+      "title": "Ise Alim — Alanlar nasıl doldurulur?",
+      "text": "Baslik: zorunlu.\nAciklama: isteğe bağlı.\nTarih: isteğe bağlı. Takvimden tarih seçin.\nAday e-postasi: isteğe bağlı.\nPozisyon: isteğe bağlı.\nDepartman: isteğe bağlı."
+    },
+    {
+      "id": "recruitment.detail.adimlar",
+      "scope": "recruitment",
+      "title": "Ise Alim — Adım adım kullanım",
+      "text": "Sol menü → Insan Kaynaklari → Ise Alim ekranını açın. Yeni kayit düğmesine basın, zorunlu alanları ve ilişkileri tamamlayıp Kaydet kullanın.\nTaslak durumunda: Gorusme.\nTaslak durumunda: Reddedildi.\nGorusme durumunda: Teklif.\nGorusme durumunda: Reddedildi.\nTeklif durumunda: Ise al / calisan olustur.\nTeklif durumunda: Reddedildi.\nİşlem düğmeleri kayıt satırında görünür. Ayrıntı panelinde işlem yapıyorsanız panel açık kalıp yeni duruma geçer. Kritik işlemler onay ister. Eski sürüm uyarısında Yenile kullanın; aynı işlemi tekrar tekrar göndermeyin."
+    },
+    {
+      "id": "recruitment.detail.dikkat",
+      "scope": "recruitment",
+      "title": "Ise Alim — Dikkat edilmesi gerekenler ve sık hatalar",
+      "text": "AI Mulakat için Sistem → AI Mulakat ekranına gidin. Gereksinimleri yazın, 2–10 soru seçin ve davet oluşturun. Sorular önceki yanıta göre değişir; yanıt iletimi için onay gerekir. Avatar yerel Türkçe tarayıcı sesi varsa konuşur. AI otomatik işe alma/eleme kararı vermez; gerçek aday verisiyle demo yapmayın."
+    },
+    {
+      "id": "recruitment.detail.ornek",
+      "scope": "recruitment",
+      "title": "Ise Alim — Örnek senaryo ve beklenen sonuç",
+      "text": "Örnek: TEST — Aday, pozisyon Yazılımcı ve departman Yazılım. Görüşme → Teklif → Ise al / calisan olustur ile bağlantılı çalışan kartı oluşmalıdır."
+    },
+    {
+      "id": "recruitment.detail.kontrol",
+      "scope": "recruitment",
+      "title": "Ise Alim — İşlemden sonra ne kontrol edilir?",
+      "text": "Belgenin güncel durumu, seçilen ilişkiler ve hesaplanan alanları kontrol edin. Hata çıktığında mesajı okuyun; yetki hatası için yöneticiye başvurun. Kaydı yeniden oluşturmak yerine önce Ara/Yenile ile mevcut işlemi bulun. Örnekler bağımsız senaryolardır; önceki örneğin stok veya bakiyesinin sizin veritabanınızda aynen bulunduğunu varsaymayın."
+    },
+    {
+      "id": "fleet.detail.erisim",
+      "scope": "fleet",
+      "title": "Arac Filosu — Nereden açılır ve hangi yetki gerekir?",
+      "text": "Sol menü → Insan Kaynaklari → Arac Filosu. Standart roller: hr; admin tüm alanlara erişir. Yönetici modül bazında bu varsayılanı değiştirebilir. Sadece görüntüleme izni olan kullanıcı işlem yapamaz. Menü görünmüyorsa Sistem → Kullanicilar ve Roller ekranını yöneticiniz kontrol etmelidir. Rehberi görme izni kayıtları görme izninden ayrıdır."
+    },
+    {
+      "id": "fleet.detail.alanlar",
+      "scope": "fleet",
+      "title": "Arac Filosu — Alanlar nasıl doldurulur?",
+      "text": "Baslik: zorunlu.\nAciklama: isteğe bağlı.\nTarih: isteğe bağlı. Takvimden tarih seçin.\nPlaka: zorunlu.\nKilometre: isteğe bağlı.\nSurucu: isteğe bağlı.\nSurucu: isteğe bağlı. Arama kutusuna adını yazın; ardından Calisanlar listesinden kaydı seçin. Sadece arama metnini yazmak seçim değildir.\nSigorta bitisi: isteğe bağlı. Takvimden tarih seçin.\nMuayene tarihi: isteğe bağlı. Takvimden tarih seçin."
+    },
+    {
+      "id": "fleet.detail.adimlar",
+      "scope": "fleet",
+      "title": "Arac Filosu — Adım adım kullanım",
+      "text": "Sol menü → Insan Kaynaklari → Arac Filosu ekranını açın. Yeni kayit düğmesine basın, zorunlu alanları ve ilişkileri tamamlayıp Kaydet kullanın.\nTaslak durumunda: Baslat.\nDevam ediyor durumunda: Tamamla.\nİşlem düğmeleri kayıt satırında görünür. Ayrıntı panelinde işlem yapıyorsanız panel açık kalıp yeni duruma geçer. Kritik işlemler onay ister. Eski sürüm uyarısında Yenile kullanın; aynı işlemi tekrar tekrar göndermeyin."
+    },
+    {
+      "id": "fleet.detail.dikkat",
+      "scope": "fleet",
+      "title": "Arac Filosu — Dikkat edilmesi gerekenler ve sık hatalar",
+      "text": "Araçtaki maliyet ve kilometre servis/yakıt kayıtlarından ilerler. Sigorta/muayene tarihini kaydetmek otomatik uyarı göndermez."
+    },
+    {
+      "id": "fleet.detail.ornek",
+      "scope": "fleet",
+      "title": "Arac Filosu — Örnek senaryo ve beklenen sonuç",
+      "text": "Örnek: TEST — Araç, plaka TEST-001 ve kilometre 100. Sonraki servis kaydı 120 kilometre ve 75 TL ise araç toplam maliyeti 75 TL artmalıdır."
+    },
+    {
+      "id": "fleet.detail.kontrol",
+      "scope": "fleet",
+      "title": "Arac Filosu — İşlemden sonra ne kontrol edilir?",
+      "text": "Belgenin güncel durumu, seçilen ilişkiler ve hesaplanan alanları kontrol edin. Hata çıktığında mesajı okuyun; yetki hatası için yöneticiye başvurun. Kaydı yeniden oluşturmak yerine önce Ara/Yenile ile mevcut işlemi bulun. Örnekler bağımsız senaryolardır; önceki örneğin stok veya bakiyesinin sizin veritabanınızda aynen bulunduğunu varsaymayın."
+    },
+    {
+      "id": "projects.detail.erisim",
+      "scope": "projects",
+      "title": "Projeler — Nereden açılır ve hangi yetki gerekir?",
+      "text": "Sol menü → Hizmetler → Projeler. Standart roller: project; admin tüm alanlara erişir. Yönetici modül bazında bu varsayılanı değiştirebilir. Sadece görüntüleme izni olan kullanıcı işlem yapamaz. Menü görünmüyorsa Sistem → Kullanicilar ve Roller ekranını yöneticiniz kontrol etmelidir. Rehberi görme izni kayıtları görme izninden ayrıdır."
+    },
+    {
+      "id": "projects.detail.alanlar",
+      "scope": "projects",
+      "title": "Projeler — Alanlar nasıl doldurulur?",
+      "text": "Baslik: zorunlu.\nAciklama: isteğe bağlı.\nTarih: isteğe bağlı. Takvimden tarih seçin."
+    },
+    {
+      "id": "projects.detail.adimlar",
+      "scope": "projects",
+      "title": "Projeler — Adım adım kullanım",
+      "text": "Sol menü → Hizmetler → Projeler ekranını açın. Yeni kayit düğmesine basın, zorunlu alanları ve ilişkileri tamamlayıp Kaydet kullanın.\nTaslak durumunda: Baslat.\nDevam ediyor durumunda: Tamamla.\nİşlem düğmeleri kayıt satırında görünür. Ayrıntı panelinde işlem yapıyorsanız panel açık kalıp yeni duruma geçer. Kritik işlemler onay ister. Eski sürüm uyarısında Yenile kullanın; aynı işlemi tekrar tekrar göndermeyin."
+    },
+    {
+      "id": "projects.detail.dikkat",
+      "scope": "projects",
+      "title": "Projeler — Dikkat edilmesi gerekenler ve sık hatalar",
+      "text": "Proje tamamlamak kendiliğinden müşteri faturası oluşturmaz. Tarih ve sorumlu alanları kayıt takibi içindir."
+    },
+    {
+      "id": "projects.detail.ornek",
+      "scope": "projects",
+      "title": "Projeler — Örnek senaryo ve beklenen sonuç",
+      "text": "Örnek: TEST — Proje oluşturup Baslat yapın. Bağlı açık görev varken Tamamla reddedilmeli; görevler bitirildikten sonra tamamlanmalıdır."
+    },
+    {
+      "id": "projects.detail.kontrol",
+      "scope": "projects",
+      "title": "Projeler — İşlemden sonra ne kontrol edilir?",
+      "text": "Belgenin güncel durumu, seçilen ilişkiler ve hesaplanan alanları kontrol edin. Hata çıktığında mesajı okuyun; yetki hatası için yöneticiye başvurun. Kaydı yeniden oluşturmak yerine önce Ara/Yenile ile mevcut işlemi bulun. Örnekler bağımsız senaryolardır; önceki örneğin stok veya bakiyesinin sizin veritabanınızda aynen bulunduğunu varsaymayın."
+    },
+    {
+      "id": "tasks.detail.erisim",
+      "scope": "tasks",
+      "title": "Gorevler — Nereden açılır ve hangi yetki gerekir?",
+      "text": "Sol menü → Hizmetler → Gorevler. Standart roller: project; admin tüm alanlara erişir. Yönetici modül bazında bu varsayılanı değiştirebilir. Sadece görüntüleme izni olan kullanıcı işlem yapamaz. Menü görünmüyorsa Sistem → Kullanicilar ve Roller ekranını yöneticiniz kontrol etmelidir. Rehberi görme izni kayıtları görme izninden ayrıdır."
+    },
+    {
+      "id": "tasks.detail.alanlar",
+      "scope": "tasks",
+      "title": "Gorevler — Alanlar nasıl doldurulur?",
+      "text": "Baslik: zorunlu.\nAciklama: isteğe bağlı.\nTarih: isteğe bağlı. Takvimden tarih seçin.\nProje: zorunlu. Arama kutusuna adını yazın; ardından Projeler listesinden kaydı seçin. Sadece arama metnini yazmak seçim değildir.\nSorumlu: isteğe bağlı.\nPlanlanan saat: isteğe bağlı."
+    },
+    {
+      "id": "tasks.detail.adimlar",
+      "scope": "tasks",
+      "title": "Gorevler — Adım adım kullanım",
+      "text": "Sol menü → Hizmetler → Gorevler ekranını açın. Yeni kayit düğmesine basın, zorunlu alanları ve ilişkileri tamamlayıp Kaydet kullanın.\nTaslak durumunda: Baslat.\nDevam ediyor durumunda: Tamamla.\nİşlem düğmeleri kayıt satırında görünür. Ayrıntı panelinde işlem yapıyorsanız panel açık kalıp yeni duruma geçer. Kritik işlemler onay ister. Eski sürüm uyarısında Yenile kullanın; aynı işlemi tekrar tekrar göndermeyin."
+    },
+    {
+      "id": "tasks.detail.dikkat",
+      "scope": "tasks",
+      "title": "Gorevler — Dikkat edilmesi gerekenler ve sık hatalar",
+      "text": "Doğru projeyi seçin. Tamamlanan projeye yeni görev açılamaz; bu kayıtta sorumlu serbest metin alanıdır."
+    },
+    {
+      "id": "tasks.detail.ornek",
+      "scope": "tasks",
+      "title": "Gorevler — Örnek senaryo ve beklenen sonuç",
+      "text": "Örnek: TEST — Proje altında TEST — Görev, planlanan süre 8 saat. Baslat → Tamamla sonrasında bağlı proje tamamlanabilir."
+    },
+    {
+      "id": "tasks.detail.kontrol",
+      "scope": "tasks",
+      "title": "Gorevler — İşlemden sonra ne kontrol edilir?",
+      "text": "Belgenin güncel durumu, seçilen ilişkiler ve hesaplanan alanları kontrol edin. Hata çıktığında mesajı okuyun; yetki hatası için yöneticiye başvurun. Kaydı yeniden oluşturmak yerine önce Ara/Yenile ile mevcut işlemi bulun. Örnekler bağımsız senaryolardır; önceki örneğin stok veya bakiyesinin sizin veritabanınızda aynen bulunduğunu varsaymayın."
+    },
+    {
+      "id": "timesheets.detail.erisim",
+      "scope": "timesheets",
+      "title": "Zaman Kayitlari — Nereden açılır ve hangi yetki gerekir?",
+      "text": "Sol menü → Hizmetler → Zaman Kayitlari. Standart roller: project; admin tüm alanlara erişir. Yönetici modül bazında bu varsayılanı değiştirebilir. Sadece görüntüleme izni olan kullanıcı işlem yapamaz. Menü görünmüyorsa Sistem → Kullanicilar ve Roller ekranını yöneticiniz kontrol etmelidir. Rehberi görme izni kayıtları görme izninden ayrıdır."
+    },
+    {
+      "id": "timesheets.detail.alanlar",
+      "scope": "timesheets",
+      "title": "Zaman Kayitlari — Alanlar nasıl doldurulur?",
+      "text": "Baslik: zorunlu.\nAciklama: isteğe bağlı.\nTarih: isteğe bağlı. Takvimden tarih seçin.\nProje: zorunlu. Arama kutusuna adını yazın; ardından Projeler listesinden kaydı seçin. Sadece arama metnini yazmak seçim değildir.\nSaat: zorunlu.\nCalisan: zorunlu. Arama kutusuna adını yazın; ardından Calisanlar listesinden kaydı seçin. Sadece arama metnini yazmak seçim değildir.\nGorev: isteğe bağlı. Arama kutusuna adını yazın; ardından Gorevler listesinden kaydı seçin. Sadece arama metnini yazmak seçim değildir.\nCalisma tarihi: zorunlu. Takvimden tarih seçin.\nSaatlik tutar: isteğe bağlı. KDV hariç TL tutarı girin; en fazla iki ondalık kullanın.\nFaturalanabilir: isteğe bağlı. Seçenekler: yes, no."
+    },
+    {
+      "id": "timesheets.detail.adimlar",
+      "scope": "timesheets",
+      "title": "Zaman Kayitlari — Adım adım kullanım",
+      "text": "Sol menü → Hizmetler → Zaman Kayitlari ekranını açın. Yeni kayit düğmesine basın, zorunlu alanları ve ilişkileri tamamlayıp Kaydet kullanın.\nTaslak durumunda: Onaya gonder.\nOnay bekliyor durumunda: Onayla.\nİşlem düğmeleri kayıt satırında görünür. Ayrıntı panelinde işlem yapıyorsanız panel açık kalıp yeni duruma geçer. Kritik işlemler onay ister. Eski sürüm uyarısında Yenile kullanın; aynı işlemi tekrar tekrar göndermeyin."
+    },
+    {
+      "id": "timesheets.detail.dikkat",
+      "scope": "timesheets",
+      "title": "Zaman Kayitlari — Dikkat edilmesi gerekenler ve sık hatalar",
+      "text": "Görev başka projeye ait olamaz. Aynı çalışan ve gün için onaylı toplam 24 saati aşamaz. Hesaplanan tutar otomatik fatura veya maaş ödemesi değildir."
+    },
+    {
+      "id": "timesheets.detail.ornek",
+      "scope": "timesheets",
+      "title": "Zaman Kayitlari — Örnek senaryo ve beklenen sonuç",
+      "text": "Örnek: TEST — Çalışan, TEST — Proje, aynı projeye ait görev, 4 saat, saatlik tutar 100 ve Faturalanabilir=yes. Onaya gonder → Onayla sonrasında hesaplanan tutar 400 TL olmalıdır."
+    },
+    {
+      "id": "timesheets.detail.kontrol",
+      "scope": "timesheets",
+      "title": "Zaman Kayitlari — İşlemden sonra ne kontrol edilir?",
+      "text": "Belgenin güncel durumu, seçilen ilişkiler ve hesaplanan alanları kontrol edin. Hata çıktığında mesajı okuyun; yetki hatası için yöneticiye başvurun. Kaydı yeniden oluşturmak yerine önce Ara/Yenile ile mevcut işlemi bulun. Örnekler bağımsız senaryolardır; önceki örneğin stok veya bakiyesinin sizin veritabanınızda aynen bulunduğunu varsaymayın."
+    },
+    {
+      "id": "pos.detail.erisim",
+      "scope": "pos",
+      "title": "POS Satislari — Nereden açılır ve hangi yetki gerekir?",
+      "text": "Sol menü → Satis → POS Satislari. Standart roller: sales; admin tüm alanlara erişir. Yönetici modül bazında bu varsayılanı değiştirebilir. Sadece görüntüleme izni olan kullanıcı işlem yapamaz. Menü görünmüyorsa Sistem → Kullanicilar ve Roller ekranını yöneticiniz kontrol etmelidir. Rehberi görme izni kayıtları görme izninden ayrıdır."
+    },
+    {
+      "id": "pos.detail.alanlar",
+      "scope": "pos",
+      "title": "POS Satislari — Alanlar nasıl doldurulur?",
+      "text": "Belge adi: zorunlu.\nCari: zorunlu. Arama kutusuna adını yazın; ardından Kisiler listesinden kaydı seçin. Sadece arama metnini yazmak seçim değildir.\nUrun satirlari: zorunlu. Her satırda ürün, pozitif miktar, KDV hariç birim fiyat ve vergi yüzdesi bulunur."
+    },
+    {
+      "id": "pos.detail.adimlar",
+      "scope": "pos",
+      "title": "POS Satislari — Adım adım kullanım",
+      "text": "Sol menü → Satis → POS Satislari ekranını açın. Ürünü arayın, sepete ekleyin ve kasa formunu tamamlayın.\nTaslak durumunda: Kasada tahsil et.\nİşlem düğmeleri kayıt satırında görünür. Ayrıntı panelinde işlem yapıyorsanız panel açık kalıp yeni duruma geçer. Kritik işlemler onay ister. Eski sürüm uyarısında Yenile kullanın; aynı işlemi tekrar tekrar göndermeyin."
+    },
+    {
+      "id": "pos.detail.dikkat",
+      "scope": "pos",
+      "title": "POS Satislari — Dikkat edilmesi gerekenler ve sık hatalar",
+      "text": "Nakit demo kaydı gerçek para transferi değildir. iyzico Sandbox için ayarlar ve dış HTTPS dönüş adresi gerekir; kart verisi ERP formuna girilmez. Aynı isteğin tekrarı ikinci satış oluşturmamalıdır."
+    },
+    {
+      "id": "pos.detail.ornek",
+      "scope": "pos",
+      "title": "POS Satislari — Örnek senaryo ve beklenen sonuç",
+      "text": "Örnek: stokta bulunan ürünü Sistem değil Satis → POS Satislari ekranında aratıp sepete ekleyin; cari ve Nakit seçip tahsil edin. Stok azalmalı, bağlantılı fatura ve ödeme kaydı oluşmalıdır."
+    },
+    {
+      "id": "pos.detail.kontrol",
+      "scope": "pos",
+      "title": "POS Satislari — İşlemden sonra ne kontrol edilir?",
+      "text": "Belgenin güncel durumu, seçilen ilişkiler ve hesaplanan alanları kontrol edin. Hata çıktığında mesajı okuyun; yetki hatası için yöneticiye başvurun. Kaydı yeniden oluşturmak yerine önce Ara/Yenile ile mevcut işlemi bulun. Örnekler bağımsız senaryolardır; önceki örneğin stok veya bakiyesinin sizin veritabanınızda aynen bulunduğunu varsaymayın."
+    },
+    {
+      "id": "website.detail.erisim",
+      "scope": "website",
+      "title": "Web Sayfalari — Nereden açılır ve hangi yetki gerekir?",
+      "text": "Sol menü → Web → Web Sayfalari. Standart roller: marketing; admin tüm alanlara erişir. Yönetici modül bazında bu varsayılanı değiştirebilir. Sadece görüntüleme izni olan kullanıcı işlem yapamaz. Menü görünmüyorsa Sistem → Kullanicilar ve Roller ekranını yöneticiniz kontrol etmelidir. Rehberi görme izni kayıtları görme izninden ayrıdır."
+    },
+    {
+      "id": "website.detail.alanlar",
+      "scope": "website",
+      "title": "Web Sayfalari — Alanlar nasıl doldurulur?",
+      "text": "Baslik: zorunlu.\nAciklama: isteğe bağlı.\nTarih: isteğe bağlı. Takvimden tarih seçin.\nAdres yolu: isteğe bağlı.\nSayfa bloklari: isteğe bağlı."
+    },
+    {
+      "id": "website.detail.adimlar",
+      "scope": "website",
+      "title": "Web Sayfalari — Adım adım kullanım",
+      "text": "Sol menü → Web → Web Sayfalari ekranını açın. Sayfa editöründe adı, adresi ve blokları düzenleyin; taslağı kaydedin.\nTaslak durumunda: Yayinla.\nYayin kaydi durumunda: Yayinla.\nYayin kaydi durumunda: Yayindan kaldir.\nİşlem düğmeleri kayıt satırında görünür. Ayrıntı panelinde işlem yapıyorsanız panel açık kalıp yeni duruma geçer. Kritik işlemler onay ister. Eski sürüm uyarısında Yenile kullanın; aynı işlemi tekrar tekrar göndermeyin."
+    },
+    {
+      "id": "website.detail.dikkat",
+      "scope": "website",
+      "title": "Web Sayfalari — Dikkat edilmesi gerekenler ve sık hatalar",
+      "text": "Taslak düzenlemek yayımdaki kopyayı değiştirmez; yeniden Yayinla gerekir. Sayfa adresi küçük harf/rakam/tire olmalı ve benzersizdir. Gerekli ürünlerin Magazada yayinla seçimi yes olmalıdır."
+    },
+    {
+      "id": "website.detail.ornek",
+      "scope": "website",
+      "title": "Web Sayfalari — Örnek senaryo ve beklenen sonuç",
+      "text": "Örnek: Web → Web Sayfalari ekranında sayfa adı ve test-magaza adresi belirleyin. Kapak, metin ve ürün vitrini blokları ekleyip sürükleyin; Kaydet → Yayinla yapın."
+    },
+    {
+      "id": "website.detail.kontrol",
+      "scope": "website",
+      "title": "Web Sayfalari — İşlemden sonra ne kontrol edilir?",
+      "text": "Belgenin güncel durumu, seçilen ilişkiler ve hesaplanan alanları kontrol edin. Hata çıktığında mesajı okuyun; yetki hatası için yöneticiye başvurun. Kaydı yeniden oluşturmak yerine önce Ara/Yenile ile mevcut işlemi bulun. Örnekler bağımsız senaryolardır; önceki örneğin stok veya bakiyesinin sizin veritabanınızda aynen bulunduğunu varsaymayın."
+    },
+    {
+      "id": "ecommerce.detail.erisim",
+      "scope": "ecommerce",
+      "title": "E-ticaret Siparisleri — Nereden açılır ve hangi yetki gerekir?",
+      "text": "Sol menü → Web → E-ticaret Siparisleri. Standart roller: sales; admin tüm alanlara erişir. Yönetici modül bazında bu varsayılanı değiştirebilir. Sadece görüntüleme izni olan kullanıcı işlem yapamaz. Menü görünmüyorsa Sistem → Kullanicilar ve Roller ekranını yöneticiniz kontrol etmelidir. Rehberi görme izni kayıtları görme izninden ayrıdır."
+    },
+    {
+      "id": "ecommerce.detail.alanlar",
+      "scope": "ecommerce",
+      "title": "E-ticaret Siparisleri — Alanlar nasıl doldurulur?",
+      "text": "Belge adi: zorunlu.\nCari: zorunlu. Arama kutusuna adını yazın; ardından Kisiler listesinden kaydı seçin. Sadece arama metnini yazmak seçim değildir.\nUrun satirlari: zorunlu. Her satırda ürün, pozitif miktar, KDV hariç birim fiyat ve vergi yüzdesi bulunur."
+    },
+    {
+      "id": "ecommerce.detail.adimlar",
+      "scope": "ecommerce",
+      "title": "E-ticaret Siparisleri — Adım adım kullanım",
+      "text": "Sol menü → Web → E-ticaret Siparisleri ekranını açın. Yeni kayit düğmesine basın, zorunlu alanları ve ilişkileri tamamlayıp Kaydet kullanın.\nTaslak durumunda: Onayla.\nOnaylandi durumunda: Sevk et.\nSevk edildi durumunda: Fatura olustur.\nİşlem düğmeleri kayıt satırında görünür. Ayrıntı panelinde işlem yapıyorsanız panel açık kalıp yeni duruma geçer. Kritik işlemler onay ister. Eski sürüm uyarısında Yenile kullanın; aynı işlemi tekrar tekrar göndermeyin."
+    },
+    {
+      "id": "ecommerce.detail.dikkat",
+      "scope": "ecommerce",
+      "title": "E-ticaret Siparisleri — Dikkat edilmesi gerekenler ve sık hatalar",
+      "text": "Sunucu ürün fiyatını yeniden hesaplar; ziyaretçinin değiştirdiği fiyat kabul edilmez. iyzico başarı dönüşü imza, tutar ve para birimiyle doğrulanır. Gerçek test hesabı ve erişilebilir HTTPS olmadan dış ödeme testi tamamlanmış sayılmaz."
+    },
+    {
+      "id": "ecommerce.detail.ornek",
+      "scope": "ecommerce",
+      "title": "E-ticaret Siparisleri — Örnek senaryo ve beklenen sonuç",
+      "text": "Örnek: yayımlanmış mağazada bir ürün seçin, sepete ekleyin ve test teslimat bilgileri girin. Ödeme başlatılması stok rezervasyonu yapar; fiziksel çıkış sevkiyatta olur."
+    },
+    {
+      "id": "ecommerce.detail.kontrol",
+      "scope": "ecommerce",
+      "title": "E-ticaret Siparisleri — İşlemden sonra ne kontrol edilir?",
+      "text": "Belgenin güncel durumu, seçilen ilişkiler ve hesaplanan alanları kontrol edin. Hata çıktığında mesajı okuyun; yetki hatası için yöneticiye başvurun. Kaydı yeniden oluşturmak yerine önce Ara/Yenile ile mevcut işlemi bulun. Örnekler bağımsız senaryolardır; önceki örneğin stok veya bakiyesinin sizin veritabanınızda aynen bulunduğunu varsaymayın."
+    },
+    {
+      "id": "events.detail.erisim",
+      "scope": "events",
+      "title": "Etkinlikler — Nereden açılır ve hangi yetki gerekir?",
+      "text": "Sol menü → Pazarlama → Etkinlikler. Standart roller: marketing; admin tüm alanlara erişir. Yönetici modül bazında bu varsayılanı değiştirebilir. Sadece görüntüleme izni olan kullanıcı işlem yapamaz. Menü görünmüyorsa Sistem → Kullanicilar ve Roller ekranını yöneticiniz kontrol etmelidir. Rehberi görme izni kayıtları görme izninden ayrıdır."
+    },
+    {
+      "id": "events.detail.alanlar",
+      "scope": "events",
+      "title": "Etkinlikler — Alanlar nasıl doldurulur?",
+      "text": "Baslik: zorunlu.\nAciklama: isteğe bağlı.\nTarih: isteğe bağlı. Takvimden tarih seçin.\nKapasite: isteğe bağlı.\nKonum: isteğe bağlı.\nBaslangic: zorunlu. Tarih ve saati birlikte seçin.\nBitis: zorunlu. Tarih ve saati birlikte seçin."
+    },
+    {
+      "id": "events.detail.adimlar",
+      "scope": "events",
+      "title": "Etkinlikler — Adım adım kullanım",
+      "text": "Sol menü → Pazarlama → Etkinlikler ekranını açın. Yeni kayit düğmesine basın, zorunlu alanları ve ilişkileri tamamlayıp Kaydet kullanın.\nTaslak durumunda: Yayinla.\nYayin kaydi durumunda: Tamamla.\nİşlem düğmeleri kayıt satırında görünür. Ayrıntı panelinde işlem yapıyorsanız panel açık kalıp yeni duruma geçer. Kritik işlemler onay ister. Eski sürüm uyarısında Yenile kullanın; aynı işlemi tekrar tekrar göndermeyin."
+    },
+    {
+      "id": "events.detail.dikkat",
+      "scope": "events",
+      "title": "Etkinlikler — Dikkat edilmesi gerekenler ve sık hatalar",
+      "text": "Aynı e-posta iki kez kaydolamaz; kapasite 0/boş sınırsız anlamındadır. Bitiş başlangıçtan önce olamaz."
+    },
+    {
+      "id": "events.detail.ornek",
+      "scope": "events",
+      "title": "Etkinlikler — Örnek senaryo ve beklenen sonuç",
+      "text": "Örnek: kapasitesi 1 olan TEST — Etkinlik yayımlayın. İlk test e-postasıyla kayıt kabul edilmeli; başka e-postayla ikinci kayıt kapasite nedeniyle reddedilmelidir."
+    },
+    {
+      "id": "events.detail.kontrol",
+      "scope": "events",
+      "title": "Etkinlikler — İşlemden sonra ne kontrol edilir?",
+      "text": "Belgenin güncel durumu, seçilen ilişkiler ve hesaplanan alanları kontrol edin. Hata çıktığında mesajı okuyun; yetki hatası için yöneticiye başvurun. Kaydı yeniden oluşturmak yerine önce Ara/Yenile ile mevcut işlemi bulun. Örnekler bağımsız senaryolardır; önceki örneğin stok veya bakiyesinin sizin veritabanınızda aynen bulunduğunu varsaymayın."
+    },
+    {
+      "id": "surveys.detail.erisim",
+      "scope": "surveys",
+      "title": "Anketler — Nereden açılır ve hangi yetki gerekir?",
+      "text": "Sol menü → Pazarlama → Anketler. Standart roller: marketing; admin tüm alanlara erişir. Yönetici modül bazında bu varsayılanı değiştirebilir. Sadece görüntüleme izni olan kullanıcı işlem yapamaz. Menü görünmüyorsa Sistem → Kullanicilar ve Roller ekranını yöneticiniz kontrol etmelidir. Rehberi görme izni kayıtları görme izninden ayrıdır."
+    },
+    {
+      "id": "surveys.detail.alanlar",
+      "scope": "surveys",
+      "title": "Anketler — Alanlar nasıl doldurulur?",
+      "text": "Baslik: zorunlu.\nAciklama: isteğe bağlı.\nTarih: isteğe bağlı. Takvimden tarih seçin.\nHer satira bir soru: zorunlu."
+    },
+    {
+      "id": "surveys.detail.adimlar",
+      "scope": "surveys",
+      "title": "Anketler — Adım adım kullanım",
+      "text": "Sol menü → Pazarlama → Anketler ekranını açın. Yeni kayit düğmesine basın, zorunlu alanları ve ilişkileri tamamlayıp Kaydet kullanın.\nTaslak durumunda: Yayinla.\nYayin kaydi durumunda: closed.\nİşlem düğmeleri kayıt satırında görünür. Ayrıntı panelinde işlem yapıyorsanız panel açık kalıp yeni duruma geçer. Kritik işlemler onay ister. Eski sürüm uyarısında Yenile kullanın; aynı işlemi tekrar tekrar göndermeyin."
+    },
+    {
+      "id": "surveys.detail.dikkat",
+      "scope": "surveys",
+      "title": "Anketler — Dikkat edilmesi gerekenler ve sık hatalar",
+      "text": "Her satır bir sorudur; 1–50 soru ve soru başına en fazla 500 karakter kullanılır. Gerçek kişisel veya hassas bilgiyi sorulara ve yanıtlara koymayın."
+    },
+    {
+      "id": "surveys.detail.ornek",
+      "scope": "surveys",
+      "title": "Anketler — Örnek senaryo ve beklenen sonuç",
+      "text": "Örnek: iki sorulu TEST — Anket yayımlayıp test e-postasıyla yanıtlayın. Cevaplar yetkili ayrıntı ekranında görünmeli; aynı e-postayla ikinci yanıt reddedilmelidir."
+    },
+    {
+      "id": "surveys.detail.kontrol",
+      "scope": "surveys",
+      "title": "Anketler — İşlemden sonra ne kontrol edilir?",
+      "text": "Belgenin güncel durumu, seçilen ilişkiler ve hesaplanan alanları kontrol edin. Hata çıktığında mesajı okuyun; yetki hatası için yöneticiye başvurun. Kaydı yeniden oluşturmak yerine önce Ara/Yenile ile mevcut işlemi bulun. Örnekler bağımsız senaryolardır; önceki örneğin stok veya bakiyesinin sizin veritabanınızda aynen bulunduğunu varsaymayın."
+    },
+    {
+      "id": "emailMarketing.detail.erisim",
+      "scope": "emailMarketing",
+      "title": "E-posta Kampanyalari — Nereden açılır ve hangi yetki gerekir?",
+      "text": "Sol menü → Pazarlama → E-posta Kampanyalari. Standart roller: marketing; admin tüm alanlara erişir. Yönetici modül bazında bu varsayılanı değiştirebilir. Sadece görüntüleme izni olan kullanıcı işlem yapamaz. Menü görünmüyorsa Sistem → Kullanicilar ve Roller ekranını yöneticiniz kontrol etmelidir. Rehberi görme izni kayıtları görme izninden ayrıdır."
+    },
+    {
+      "id": "emailMarketing.detail.alanlar",
+      "scope": "emailMarketing",
+      "title": "E-posta Kampanyalari — Alanlar nasıl doldurulur?",
+      "text": "Baslik: zorunlu.\nAciklama: isteğe bağlı.\nTarih: isteğe bağlı. Takvimden tarih seçin.\nKonu: isteğe bağlı.\nIcerik: isteğe bağlı."
+    },
+    {
+      "id": "emailMarketing.detail.adimlar",
+      "scope": "emailMarketing",
+      "title": "E-posta Kampanyalari — Adım adım kullanım",
+      "text": "Sol menü → Pazarlama → E-posta Kampanyalari ekranını açın. Yeni kayit düğmesine basın, zorunlu alanları ve ilişkileri tamamlayıp Kaydet kullanın.\nTaslak durumunda: Hazirla.\nHazir durumunda: Kampanyayi gonder.\nİşlem düğmeleri kayıt satırında görünür. Ayrıntı panelinde işlem yapıyorsanız panel açık kalıp yeni duruma geçer. Kritik işlemler onay ister. Eski sürüm uyarısında Yenile kullanın; aynı işlemi tekrar tekrar göndermeyin."
+    },
+    {
+      "id": "emailMarketing.detail.dikkat",
+      "scope": "emailMarketing",
+      "title": "E-posta Kampanyalari — Dikkat edilmesi gerekenler ve sık hatalar",
+      "text": "Gerçek e-posta gönderimi yan etkilidir; manuel denemede yalnızca size ait test alıcılarını kullanın. Pazarlama izni olmayan kişiler seçilmez. En fazla 500 benzersiz alıcı vardır. Ağ hatasında otomatik tekrar gönderim yoktur. Özet sayaçlar kuyruk bitince güncellenir; anlık gecikme olabilir."
+    },
+    {
+      "id": "emailMarketing.detail.ornek",
+      "scope": "emailMarketing",
+      "title": "E-posta Kampanyalari — Örnek senaryo ve beklenen sonuç",
+      "text": "Örnek: test SMTP ayarını yöneticinin girmesinden sonra yalnızca izinli test carisiyle kampanya hazırlayın. Hazirla → Kampanyayi gonder sonrasında teslimatlar ve kampanya özeti sonunda tutarlı olmalıdır."
+    },
+    {
+      "id": "emailMarketing.detail.kontrol",
+      "scope": "emailMarketing",
+      "title": "E-posta Kampanyalari — İşlemden sonra ne kontrol edilir?",
+      "text": "Belgenin güncel durumu, seçilen ilişkiler ve hesaplanan alanları kontrol edin. Hata çıktığında mesajı okuyun; yetki hatası için yöneticiye başvurun. Kaydı yeniden oluşturmak yerine önce Ara/Yenile ile mevcut işlemi bulun. Örnekler bağımsız senaryolardır; önceki örneğin stok veya bakiyesinin sizin veritabanınızda aynen bulunduğunu varsaymayın."
+    },
+    {
+      "id": "warehouses.detail.erisim",
+      "scope": "warehouses",
+      "title": "Depolar — Nereden açılır ve hangi yetki gerekir?",
+      "text": "Sol menü → Stok → Depolar. Standart roller: warehouse; admin tüm alanlara erişir. Yönetici modül bazında bu varsayılanı değiştirebilir. Sadece görüntüleme izni olan kullanıcı işlem yapamaz. Menü görünmüyorsa Sistem → Kullanicilar ve Roller ekranını yöneticiniz kontrol etmelidir. Rehberi görme izni kayıtları görme izninden ayrıdır."
+    },
+    {
+      "id": "warehouses.detail.alanlar",
+      "scope": "warehouses",
+      "title": "Depolar — Alanlar nasıl doldurulur?",
+      "text": "Depo adi: zorunlu.\nAdres: isteğe bağlı."
+    },
+    {
+      "id": "warehouses.detail.adimlar",
+      "scope": "warehouses",
+      "title": "Depolar — Adım adım kullanım",
+      "text": "Sol menü → Stok → Depolar ekranını açın. Yeni kayit düğmesine basın, zorunlu alanları ve ilişkileri tamamlayıp Kaydet kullanın.\nBu kartın ilk kaydından sonra bağlı işlemler ilgili modüllerde yürütülür.\nİşlem düğmeleri kayıt satırında görünür. Ayrıntı panelinde işlem yapıyorsanız panel açık kalıp yeni duruma geçer. Kritik işlemler onay ister. Eski sürüm uyarısında Yenile kullanın; aynı işlemi tekrar tekrar göndermeyin."
+    },
+    {
+      "id": "warehouses.detail.dikkat",
+      "scope": "warehouses",
+      "title": "Depolar — Dikkat edilmesi gerekenler ve sık hatalar",
+      "text": "Depo kartı oluşturmak stok taşımaz. Stok taşıma ayrı transfer işlemiyle yapılır."
+    },
+    {
+      "id": "warehouses.detail.ornek",
+      "scope": "warehouses",
+      "title": "Depolar — Örnek senaryo ve beklenen sonuç",
+      "text": "Örnek: TEST — Şube Deposu oluşturun. Siparişte depo boş kalırsa bu yeni depoya değil ana depoya işlem yapılır."
+    },
+    {
+      "id": "warehouses.detail.kontrol",
+      "scope": "warehouses",
+      "title": "Depolar — İşlemden sonra ne kontrol edilir?",
+      "text": "Belgenin güncel durumu, seçilen ilişkiler ve hesaplanan alanları kontrol edin. Hata çıktığında mesajı okuyun; yetki hatası için yöneticiye başvurun. Kaydı yeniden oluşturmak yerine önce Ara/Yenile ile mevcut işlemi bulun. Örnekler bağımsız senaryolardır; önceki örneğin stok veya bakiyesinin sizin veritabanınızda aynen bulunduğunu varsaymayın."
+    },
+    {
+      "id": "stockAdjustments.detail.erisim",
+      "scope": "stockAdjustments",
+      "title": "Stok Sayimi / Acilis — Nereden açılır ve hangi yetki gerekir?",
+      "text": "Sol menü → Stok → Stok Sayimi / Acilis. Standart roller: warehouse; admin tüm alanlara erişir. Yönetici modül bazında bu varsayılanı değiştirebilir. Sadece görüntüleme izni olan kullanıcı işlem yapamaz. Menü görünmüyorsa Sistem → Kullanicilar ve Roller ekranını yöneticiniz kontrol etmelidir. Rehberi görme izni kayıtları görme izninden ayrıdır."
+    },
+    {
+      "id": "stockAdjustments.detail.alanlar",
+      "scope": "stockAdjustments",
+      "title": "Stok Sayimi / Acilis — Alanlar nasıl doldurulur?",
+      "text": "Sayim adi: zorunlu.\nUrun: zorunlu. Arama kutusuna adını yazın; ardından Urunler listesinden kaydı seçin. Sadece arama metnini yazmak seçim değildir.\nDepo (bos: ana depo): isteğe bağlı. Arama kutusuna adını yazın; ardından Depolar listesinden kaydı seçin. Sadece arama metnini yazmak seçim değildir.\nSayilan miktar: zorunlu."
+    },
+    {
+      "id": "stockAdjustments.detail.adimlar",
+      "scope": "stockAdjustments",
+      "title": "Stok Sayimi / Acilis — Adım adım kullanım",
+      "text": "Sol menü → Stok → Stok Sayimi / Acilis ekranını açın. Yeni kayit düğmesine basın, zorunlu alanları ve ilişkileri tamamlayıp Kaydet kullanın.\nTaslak durumunda: Sayimi uygula.\nİşlem düğmeleri kayıt satırında görünür. Ayrıntı panelinde işlem yapıyorsanız panel açık kalıp yeni duruma geçer. Kritik işlemler onay ister. Eski sürüm uyarısında Yenile kullanın; aynı işlemi tekrar tekrar göndermeyin."
+    },
+    {
+      "id": "stockAdjustments.detail.dikkat",
+      "scope": "stockAdjustments",
+      "title": "Stok Sayimi / Acilis — Dikkat edilmesi gerekenler ve sık hatalar",
+      "text": "Sayım alanı eklenecek miktar değil hedef toplam bakiyedir. Yanlış depoda sayım yapmayın; rezervasyon altına düşen sayım reddedilir."
+    },
+    {
+      "id": "stockAdjustments.detail.ornek",
+      "scope": "stockAdjustments",
+      "title": "Stok Sayimi / Acilis — Örnek senaryo ve beklenen sonuç",
+      "text": "Örnek: stoğu 8 olan üründe Sayilan miktar=12 girip Sayimi uygula yapın. Sonuç 20 değil 12, oluşan fark hareketi +4 olmalıdır."
+    },
+    {
+      "id": "stockAdjustments.detail.kontrol",
+      "scope": "stockAdjustments",
+      "title": "Stok Sayimi / Acilis — İşlemden sonra ne kontrol edilir?",
+      "text": "Belgenin güncel durumu, seçilen ilişkiler ve hesaplanan alanları kontrol edin. Hata çıktığında mesajı okuyun; yetki hatası için yöneticiye başvurun. Kaydı yeniden oluşturmak yerine önce Ara/Yenile ile mevcut işlemi bulun. Örnekler bağımsız senaryolardır; önceki örneğin stok veya bakiyesinin sizin veritabanınızda aynen bulunduğunu varsaymayın."
+    },
+    {
+      "id": "stockTransfers.detail.erisim",
+      "scope": "stockTransfers",
+      "title": "Depolar Arasi Transfer — Nereden açılır ve hangi yetki gerekir?",
+      "text": "Sol menü → Stok → Depolar Arasi Transfer. Standart roller: warehouse; admin tüm alanlara erişir. Yönetici modül bazında bu varsayılanı değiştirebilir. Sadece görüntüleme izni olan kullanıcı işlem yapamaz. Menü görünmüyorsa Sistem → Kullanicilar ve Roller ekranını yöneticiniz kontrol etmelidir. Rehberi görme izni kayıtları görme izninden ayrıdır."
+    },
+    {
+      "id": "stockTransfers.detail.alanlar",
+      "scope": "stockTransfers",
+      "title": "Depolar Arasi Transfer — Alanlar nasıl doldurulur?",
+      "text": "Transfer adi: zorunlu.\nUrun: zorunlu. Arama kutusuna adını yazın; ardından Urunler listesinden kaydı seçin. Sadece arama metnini yazmak seçim değildir.\nMiktar: zorunlu.\nCikis deposu (bos: ana): isteğe bağlı. Arama kutusuna adını yazın; ardından Depolar listesinden kaydı seçin. Sadece arama metnini yazmak seçim değildir.\nGiris deposu (bos: ana): isteğe bağlı. Arama kutusuna adını yazın; ardından Depolar listesinden kaydı seçin. Sadece arama metnini yazmak seçim değildir."
+    },
+    {
+      "id": "stockTransfers.detail.adimlar",
+      "scope": "stockTransfers",
+      "title": "Depolar Arasi Transfer — Adım adım kullanım",
+      "text": "Sol menü → Stok → Depolar Arasi Transfer ekranını açın. Yeni kayit düğmesine basın, zorunlu alanları ve ilişkileri tamamlayıp Kaydet kullanın.\nTaslak durumunda: Transfer et.\nİşlem düğmeleri kayıt satırında görünür. Ayrıntı panelinde işlem yapıyorsanız panel açık kalıp yeni duruma geçer. Kritik işlemler onay ister. Eski sürüm uyarısında Yenile kullanın; aynı işlemi tekrar tekrar göndermeyin."
+    },
+    {
+      "id": "stockTransfers.detail.dikkat",
+      "scope": "stockTransfers",
+      "title": "Depolar Arasi Transfer — Dikkat edilmesi gerekenler ve sık hatalar",
+      "text": "Miktar pozitif olmalı, depolar aynı olmamalı ve çıkış deposunda yeterli stok olmalıdır. Boş depo ana depo demektir; iki tarafı da boş bırakmayın."
+    },
+    {
+      "id": "stockTransfers.detail.ornek",
+      "scope": "stockTransfers",
+      "title": "Depolar Arasi Transfer — Örnek senaryo ve beklenen sonuç",
+      "text": "Örnek: ana depoda 12 adet üründen 3 adedi TEST — Şube Deposu’na aktarın. Ana depo 9, şube 3, toplam 12 olmalıdır."
+    },
+    {
+      "id": "stockTransfers.detail.kontrol",
+      "scope": "stockTransfers",
+      "title": "Depolar Arasi Transfer — İşlemden sonra ne kontrol edilir?",
+      "text": "Belgenin güncel durumu, seçilen ilişkiler ve hesaplanan alanları kontrol edin. Hata çıktığında mesajı okuyun; yetki hatası için yöneticiye başvurun. Kaydı yeniden oluşturmak yerine önce Ara/Yenile ile mevcut işlemi bulun. Örnekler bağımsız senaryolardır; önceki örneğin stok veya bakiyesinin sizin veritabanınızda aynen bulunduğunu varsaymayın."
+    },
+    {
+      "id": "boms.detail.erisim",
+      "scope": "boms",
+      "title": "Urun Receteleri — Nereden açılır ve hangi yetki gerekir?",
+      "text": "Sol menü → Uretim → Urun Receteleri. Standart roller: production; admin tüm alanlara erişir. Yönetici modül bazında bu varsayılanı değiştirebilir. Sadece görüntüleme izni olan kullanıcı işlem yapamaz. Menü görünmüyorsa Sistem → Kullanicilar ve Roller ekranını yöneticiniz kontrol etmelidir. Rehberi görme izni kayıtları görme izninden ayrıdır."
+    },
+    {
+      "id": "boms.detail.alanlar",
+      "scope": "boms",
+      "title": "Urun Receteleri — Alanlar nasıl doldurulur?",
+      "text": "Recete adi: zorunlu.\nMamul: zorunlu. Arama kutusuna adını yazın; ardından Urunler listesinden kaydı seçin. Sadece arama metnini yazmak seçim değildir.\nBirim mamul bilesenleri: zorunlu. Bileşen ürününü ve birim mamul için gereken pozitif miktarı girin."
+    },
+    {
+      "id": "boms.detail.adimlar",
+      "scope": "boms",
+      "title": "Urun Receteleri — Adım adım kullanım",
+      "text": "Sol menü → Uretim → Urun Receteleri ekranını açın. Yeni kayit düğmesine basın, zorunlu alanları ve ilişkileri tamamlayıp Kaydet kullanın.\nDevam ediyor durumunda: Uretim emri ac.\nİşlem düğmeleri kayıt satırında görünür. Ayrıntı panelinde işlem yapıyorsanız panel açık kalıp yeni duruma geçer. Kritik işlemler onay ister. Eski sürüm uyarısında Yenile kullanın; aynı işlemi tekrar tekrar göndermeyin."
+    },
+    {
+      "id": "boms.detail.dikkat",
+      "scope": "boms",
+      "title": "Urun Receteleri — Dikkat edilmesi gerekenler ve sık hatalar",
+      "text": "Mamul kendi bileşeni olamaz. Bileşen miktarları bir birim mamul içindir; üretim miktarıyla çarpılır. Reçete kaydetmek stok tüketmez."
+    },
+    {
+      "id": "boms.detail.ornek",
+      "scope": "boms",
+      "title": "Urun Receteleri — Örnek senaryo ve beklenen sonuç",
+      "text": "Örnek: TEST — Set mamulü için bir adet mamulde 2 adet TEST — Kalem kullanacak reçete kaydedin. Uretim emri ac bir adet mamul için taslak emir oluşturur."
+    },
+    {
+      "id": "boms.detail.kontrol",
+      "scope": "boms",
+      "title": "Urun Receteleri — İşlemden sonra ne kontrol edilir?",
+      "text": "Belgenin güncel durumu, seçilen ilişkiler ve hesaplanan alanları kontrol edin. Hata çıktığında mesajı okuyun; yetki hatası için yöneticiye başvurun. Kaydı yeniden oluşturmak yerine önce Ara/Yenile ile mevcut işlemi bulun. Örnekler bağımsız senaryolardır; önceki örneğin stok veya bakiyesinin sizin veritabanınızda aynen bulunduğunu varsaymayın."
+    },
+    {
+      "id": "equipment.detail.erisim",
+      "scope": "equipment",
+      "title": "Ekipmanlar — Nereden açılır ve hangi yetki gerekir?",
+      "text": "Sol menü → Uretim → Ekipmanlar. Standart roller: production; admin tüm alanlara erişir. Yönetici modül bazında bu varsayılanı değiştirebilir. Sadece görüntüleme izni olan kullanıcı işlem yapamaz. Menü görünmüyorsa Sistem → Kullanicilar ve Roller ekranını yöneticiniz kontrol etmelidir. Rehberi görme izni kayıtları görme izninden ayrıdır."
+    },
+    {
+      "id": "equipment.detail.alanlar",
+      "scope": "equipment",
+      "title": "Ekipmanlar — Alanlar nasıl doldurulur?",
+      "text": "Ekipman adi: zorunlu.\nSeri no: isteğe bağlı.\nKonum: isteğe bağlı.\nSonraki bakim: isteğe bağlı. Takvimden tarih seçin."
+    },
+    {
+      "id": "equipment.detail.adimlar",
+      "scope": "equipment",
+      "title": "Ekipmanlar — Adım adım kullanım",
+      "text": "Sol menü → Uretim → Ekipmanlar ekranını açın. Yeni kayit düğmesine basın, zorunlu alanları ve ilişkileri tamamlayıp Kaydet kullanın.\nDevam ediyor durumunda: Arsivle.\nİşlem düğmeleri kayıt satırında görünür. Ayrıntı panelinde işlem yapıyorsanız panel açık kalıp yeni duruma geçer. Kritik işlemler onay ister. Eski sürüm uyarısında Yenile kullanın; aynı işlemi tekrar tekrar göndermeyin."
+    },
+    {
+      "id": "equipment.detail.dikkat",
+      "scope": "equipment",
+      "title": "Ekipmanlar — Dikkat edilmesi gerekenler ve sık hatalar",
+      "text": "Son bakım ve toplam bakım maliyeti tamamlanan bakım kayıtlarından güncellenir. Kart oluşturmak otomatik bakım planı veya bildirim kurmaz."
+    },
+    {
+      "id": "equipment.detail.ornek",
+      "scope": "equipment",
+      "title": "Ekipmanlar — Örnek senaryo ve beklenen sonuç",
+      "text": "Örnek: TEST — Makine, seri no TEST-SERI-01, konum Atölye. Yeni kart oluşturmak bakım harcaması yaratmaz."
+    },
+    {
+      "id": "equipment.detail.kontrol",
+      "scope": "equipment",
+      "title": "Ekipmanlar — İşlemden sonra ne kontrol edilir?",
+      "text": "Belgenin güncel durumu, seçilen ilişkiler ve hesaplanan alanları kontrol edin. Hata çıktığında mesajı okuyun; yetki hatası için yöneticiye başvurun. Kaydı yeniden oluşturmak yerine önce Ara/Yenile ile mevcut işlemi bulun. Örnekler bağımsız senaryolardır; önceki örneğin stok veya bakiyesinin sizin veritabanınızda aynen bulunduğunu varsaymayın."
+    },
+    {
+      "id": "vehicleServices.detail.erisim",
+      "scope": "vehicleServices",
+      "title": "Arac Servis / Yakit — Nereden açılır ve hangi yetki gerekir?",
+      "text": "Sol menü → Insan Kaynaklari → Arac Servis / Yakit. Standart roller: hr; admin tüm alanlara erişir. Yönetici modül bazında bu varsayılanı değiştirebilir. Sadece görüntüleme izni olan kullanıcı işlem yapamaz. Menü görünmüyorsa Sistem → Kullanicilar ve Roller ekranını yöneticiniz kontrol etmelidir. Rehberi görme izni kayıtları görme izninden ayrıdır."
+    },
+    {
+      "id": "vehicleServices.detail.alanlar",
+      "scope": "vehicleServices",
+      "title": "Arac Servis / Yakit — Alanlar nasıl doldurulur?",
+      "text": "Islem adi: zorunlu.\nArac: zorunlu. Arama kutusuna adını yazın; ardından Arac Filosu listesinden kaydı seçin. Sadece arama metnini yazmak seçim değildir.\nTarih: zorunlu. Takvimden tarih seçin.\nKilometre: zorunlu.\nTutar: zorunlu. KDV hariç TL tutarı girin; en fazla iki ondalık kullanın.\nTur: zorunlu. Seçenekler: service, fuel, insurance, other."
+    },
+    {
+      "id": "vehicleServices.detail.adimlar",
+      "scope": "vehicleServices",
+      "title": "Arac Servis / Yakit — Adım adım kullanım",
+      "text": "Sol menü → Insan Kaynaklari → Arac Servis / Yakit ekranını açın. Yeni kayit düğmesine basın, zorunlu alanları ve ilişkileri tamamlayıp Kaydet kullanın.\nTaslak durumunda: Tamamla.\nİşlem düğmeleri kayıt satırında görünür. Ayrıntı panelinde işlem yapıyorsanız panel açık kalıp yeni duruma geçer. Kritik işlemler onay ister. Eski sürüm uyarısında Yenile kullanın; aynı işlemi tekrar tekrar göndermeyin."
+    },
+    {
+      "id": "vehicleServices.detail.dikkat",
+      "scope": "vehicleServices",
+      "title": "Arac Servis / Yakit — Dikkat edilmesi gerekenler ve sık hatalar",
+      "text": "Kilometre önceki değerden küçük olamaz. Türler service=servis, fuel=yakıt, insurance=sigorta, other=diğer. Aynı tamamlanma tekrar maliyet eklememelidir."
+    },
+    {
+      "id": "vehicleServices.detail.ornek",
+      "scope": "vehicleServices",
+      "title": "Arac Servis / Yakit — Örnek senaryo ve beklenen sonuç",
+      "text": "Örnek: TEST — Araç için tür service, kilometre 120, tutar 75 seçip Tamamla yapın. Araç kilometresi 120 ve ek maliyet 75 TL olmalıdır."
+    },
+    {
+      "id": "vehicleServices.detail.kontrol",
+      "scope": "vehicleServices",
+      "title": "Arac Servis / Yakit — İşlemden sonra ne kontrol edilir?",
+      "text": "Belgenin güncel durumu, seçilen ilişkiler ve hesaplanan alanları kontrol edin. Hata çıktığında mesajı okuyun; yetki hatası için yöneticiye başvurun. Kaydı yeniden oluşturmak yerine önce Ara/Yenile ile mevcut işlemi bulun. Örnekler bağımsız senaryolardır; önceki örneğin stok veya bakiyesinin sizin veritabanınızda aynen bulunduğunu varsaymayın."
+    }
+  ],
+  "updatedAt": "2026-11-15"
+}

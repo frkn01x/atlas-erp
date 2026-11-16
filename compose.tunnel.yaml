@@ -1,0 +1,46 @@
+services:
+  callback-gateway:
+    profiles: [tunnel]
+    image: nginx:1.30.5-alpine
+    environment:
+      LOCAL_RETURN_ORIGIN: http://localhost:${APP_PORT:-8080}
+      NGINX_WORKER_PROCESSES: '1'
+    volumes:
+      - ./infra/tunnel/callback.conf.template:/etc/nginx/templates/default.conf.template:ro
+      - ./infra/tunnel/unsubscribe.html:/srv/public/unsubscribe.html:ro
+      - ./infra/tunnel/unsubscribe.js:/srv/public/unsubscribe.js:ro
+    networks: [default, tunnel]
+    depends_on:
+      waf: {condition: service_healthy}
+    cap_drop: [ALL]
+    cap_add: [CHOWN, SETUID, SETGID]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 64m
+    pids_limit: 32
+    healthcheck:
+      test: [CMD, nginx, -t]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  payment-tunnel:
+    profiles: [tunnel]
+    image: cloudflare/cloudflared:2026.11.0
+    command: [tunnel, --no-autoupdate, --protocol, http2, --url, 'http://callback-gateway:8080']
+    networks: [tunnel]
+    depends_on:
+      callback-gateway: {condition: service_healthy}
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 128m
+    pids_limit: 64
+    logging:
+      options: {max-size: 5m, max-file: '2'}
+  tunnel-check:
+    profiles: [tunnel]
+    build: {context: ., target: test}
+    command: [node, api/test/tunnel-smoke.mjs]
+    networks: [tunnel]
+networks:
+  tunnel: {}

@@ -1,0 +1,208 @@
+services:
+  api:
+    build:
+      context: .
+      target: api
+    environment:
+      MONGODB_URI: ${MONGODB_URI:?Atlas baglanti adresi gerekli}
+      MONGODB_DB: ${MONGODB_DB:-atlas_erp}
+      COLLECTION_PREFIX: ${COLLECTION_PREFIX:-atlas_erp_}
+      ADMIN_EMAIL: ${ADMIN_EMAIL:?Yonetici e-postasi gerekli}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Yonetici parolasi gerekli}
+      COMPANY_NAME: ${COMPANY_NAME:-Sirketim}
+      COOKIE_SECURE: ${COOKIE_SECURE:-false}
+      TZ: Europe/Istanbul
+    volumes:
+      - settings_keys:/app/secrets
+      - api_logs:/app/logs
+    networks: [default, monitoring]
+    init: true
+    restart: unless-stopped
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 384m
+    pids_limit: 128
+    healthcheck:
+      test: [CMD, node, -e, "fetch('http://127.0.0.1:3000/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 10s
+      timeout: 5s
+      retries: 8
+  web:
+    build:
+      context: .
+      target: web
+    volumes: [web_logs:/var/log/erp]
+    depends_on:
+      api: {condition: service_healthy}
+    restart: unless-stopped
+    read_only: true
+    tmpfs: [/var/cache/nginx, /var/run, /tmp]
+    cap_drop: [ALL]
+    cap_add: [NET_BIND_SERVICE, SETUID, SETGID, CHOWN]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 96m
+    pids_limit: 64
+    healthcheck:
+      test: [CMD-SHELL, "wget -q -O /dev/null http://127.0.0.1/api/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  waf:
+    build:
+      context: .
+      dockerfile: infra/waf/Dockerfile
+    environment:
+      MODSEC_RULE_ENGINE: 'On'
+      MODSEC_AUDIT_ENGINE: RelevantOnly
+      MODSEC_AUDIT_LOG: /dev/null
+      MODSEC_AUDIT_LOG_PARTS: AZ
+      MODSEC_RESP_BODY_ACCESS: 'Off'
+      MODSEC_REQ_BODY_LIMIT: '2097152'
+      MODSEC_REQ_BODY_NOFILES_LIMIT: '2097152'
+      BLOCKING_PARANOIA: '2'
+      DETECTION_PARANOIA: '2'
+      ANOMALY_INBOUND: '5'
+      ANOMALY_OUTBOUND: '4'
+      ALLOWED_METHODS: 'GET HEAD POST PUT PATCH DELETE OPTIONS'
+      NGINX_WORKER_PROCESSES: '1'
+      BACKEND: http://web:80
+      PORT: '8080'
+      ACCESSLOG: /var/log/erp/access.log
+      ERRORLOG: /dev/stderr
+    ports: ['127.0.0.1:${APP_PORT:-8080}:8080']
+    volumes: [waf_logs:/var/log/erp]
+    networks: [default, monitoring]
+    depends_on:
+      web: {condition: service_healthy}
+    restart: unless-stopped
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 384m
+    pids_limit: 128
+    healthcheck:
+      test: [CMD-SHELL, "wget -q -O /dev/null http://127.0.0.1:8080/api/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 8
+  prometheus:
+    image: prom/prometheus:v3.16.0
+    command: ['--config.file=/etc/prometheus/prometheus.yml','--storage.tsdb.retention.time=7d','--storage.tsdb.retention.size=512MB']
+    volumes:
+      - ./infra/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./infra/prometheus/alerts.yml:/etc/prometheus/alerts.yml:ro
+      - prometheus_data:/prometheus
+    networks: [monitoring]
+    restart: unless-stopped
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 256m
+  loki:
+    image: grafana/loki:3.7.10
+    command: ['-config.file=/etc/loki/local-config.yaml']
+    volumes:
+      - ./infra/loki/loki.yml:/etc/loki/local-config.yaml:ro
+      - loki_data:/loki
+    networks: [monitoring]
+    restart: unless-stopped
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 256m
+  alloy-storage:
+    image: node:22-alpine
+    user: '0:0'
+    command: [node, -e, "const fs=require('node:fs');fs.mkdirSync('/state',{recursive:true});fs.chownSync('/state',10001,10001)"]
+    volumes: [alloy_data:/state]
+    network_mode: none
+    read_only: true
+    cap_drop: [ALL]
+    cap_add: [CHOWN]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 48m
+  alloy:
+    image: grafana/alloy:v1.22.0
+    user: '10001:10001'
+    command: ['run','--server.http.listen-addr=127.0.0.1:12345','--storage.path=/state','/etc/alloy/config.alloy']
+    volumes:
+      - ./infra/alloy/config.alloy:/etc/alloy/config.alloy:ro
+      - api_logs:/logs/api:ro
+      - waf_logs:/logs/waf:ro
+      - web_logs:/logs/web:ro
+      - alloy_data:/state
+    networks: [monitoring]
+    depends_on:
+      loki: {condition: service_started}
+      alloy-storage: {condition: service_completed_successfully}
+    restart: unless-stopped
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 192m
+  nginx-exporter:
+    image: nginx/nginx-prometheus-exporter:1.5.3
+    command: ['--nginx.scrape-uri=http://waf:8081/stub_status']
+    networks: [monitoring]
+    depends_on:
+      waf: {condition: service_healthy}
+    restart: unless-stopped
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 48m
+  grafana:
+    image: grafana/grafana:13.3.1
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD__FILE: /run/secrets/grafana_admin
+      GF_USERS_ALLOW_SIGN_UP: 'false'
+      GF_AUTH_ANONYMOUS_ENABLED: 'false'
+      GF_ANALYTICS_REPORTING_ENABLED: 'false'
+      GF_ANALYTICS_CHECK_FOR_UPDATES: 'false'
+      GF_SECURITY_COOKIE_SAMESITE: strict
+      GF_SECURITY_DISABLE_GRAVATAR: 'true'
+    secrets: [grafana_admin]
+    volumes:
+      - ./infra/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./infra/grafana/dashboards:/var/lib/grafana/dashboards:ro
+      - grafana_data:/var/lib/grafana
+    ports: ['127.0.0.1:3001:3000']
+    networks: [default, monitoring]
+    depends_on: [prometheus, loki]
+    restart: unless-stopped
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 384m
+  test:
+    profiles: [test]
+    build: {context: ., target: test}
+  acceptance:
+    profiles: [acceptance]
+    build: {context: ., target: test}
+    command: [node, api/test/acceptance.mjs]
+    environment:
+      API_URL: http://waf:8080/api
+      ADMIN_EMAIL: ${ADMIN_EMAIL:?Yonetici e-postasi gerekli}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Yonetici parolasi gerekli}
+    depends_on:
+      waf: {condition: service_healthy}
+  security-check:
+    profiles: [security-check]
+    build: {context: ., target: test}
+    command: [node, api/test/security-smoke.mjs]
+    networks: [default, monitoring]
+    depends_on:
+      waf: {condition: service_healthy}
+networks:
+  monitoring:
+    internal: true
+secrets:
+  grafana_admin:
+    file: ./.private/grafana_admin_password
+volumes:
+  settings_keys:
+  api_logs:
+  web_logs:
+  waf_logs:
+  prometheus_data:
+  loki_data:
+  alloy_data:
+  grafana_data:

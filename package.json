@@ -1,0 +1,6 @@
+{
+  "name": "atlas-erp", "version": "0.3.0", "private": true, "type": "module",
+  "scripts": {"start": "node api/src/server.js", "build": "vite build web --outDir dist", "test": "node --test api/test/*.test.js"},
+  "dependencies": {"express": "5.1.0", "mongodb": "7.9.0", "helmet": "8.1.0", "express-rate-limit": "7.5.0", "cookie-parser": "1.4.7", "react": "19.1.0", "react-dom": "19.1.0", "nodemailer":"10.5.0"},
+  "devDependencies": {"vite": "6.4.6"}
+}

@@ -1,0 +1,48 @@
+services:
+  auth-test-mongo:
+    image: mongo:8.0
+    command: [mongod, --replSet, auth-test, --bind_ip_all, --wiredTigerCacheSizeGB, '0.25', --oplogSize, '64', --quiet]
+    networks: [auth-test]
+    user: '1000:1000'
+    read_only: true
+    environment:
+      HOME: /tmp
+    tmpfs: ['/data/db:size=2g,uid=1000,gid=1000,mode=0700', '/data/configdb:size=16m,uid=1000,gid=1000,mode=0700', '/tmp:size=32m,mode=1777']
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 1g
+    cpus: 1
+    pids_limit: 128
+    healthcheck:
+      test: [CMD, mongosh, --quiet, --eval, 'quit(db.adminCommand({ping:1}).ok ? 0 : 1)']
+      interval: 3s
+      timeout: 5s
+      retries: 30
+  auth-race:
+    build: {context: ., target: test}
+    command: [node, api/test/auth-race-isolated.mjs]
+    environment:
+      MONGODB_URI: mongodb://auth-test-mongo:27017/atlas_auth_race_test?replicaSet=auth-test
+      MONGODB_DB: atlas_auth_race_test
+      COLLECTION_PREFIX: race_test_
+      ADMIN_EMAIL: owner@example.invalid
+      ADMIN_PASSWORD: DummyOldPassword-2026!
+      COMPANY_NAME: Isolated dummy company
+      COOKIE_SECURE: 'false'
+      NODE_ENV: test
+    networks: [auth-test]
+    user: '1000:1000'
+    read_only: true
+    tmpfs: ['/tmp:size=16m,mode=1777', '/app/logs:size=4m,mode=1777', '/app/secrets:size=1m,mode=1777']
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 256m
+    cpus: 1
+    pids_limit: 64
+    ulimits:
+      nofile: {soft: 128, hard: 128}
+      fsize: {soft: 8388608, hard: 8388608}
+networks:
+  auth-test:
+    internal: true
+

@@ -1,0 +1,23 @@
+groups:
+  - name: atlas
+    rules:
+      - alert: AtlasApiDown
+        expr: up{job="atlas-api"} == 0
+        for: 1m
+        labels: {severity: critical}
+        annotations: {summary: "Atlas API metrics endpoint is down"}
+      - alert: AtlasWafDown
+        expr: nginx_up{job="waf"} == 0
+        for: 1m
+        labels: {severity: critical}
+        annotations: {summary: "WAF nginx is unavailable"}
+      - alert: AtlasServerErrors
+        expr: sum(rate(erp_http_requests_total{status=~"5.."}[5m])) > 0.1
+        for: 2m
+        labels: {severity: warning}
+        annotations: {summary: "API server error rate is elevated"}
+      - alert: AtlasAuthRejections
+        expr: sum(rate(erp_http_requests_total{status=~"401|403|429"}[5m])) > 1
+        for: 2m
+        labels: {severity: warning}
+        annotations: {summary: "Authentication or access rejection rate is elevated"}

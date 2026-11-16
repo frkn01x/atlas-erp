@@ -1,0 +1,27 @@
+import assert from 'node:assert/strict';
+import {randomUUID} from 'node:crypto';
+export async function securityAiAcceptance({admin,actor,tag}){
+ const pass='AccessTest-'+randomUUID(),newActor=()=>actor();
+ const createUser=(name,roles,extra={})=>admin('/admin/users',{name,email:`${name}-${tag}@test.invalid`,password:pass,roles,...extra},'POST',201);
+ const accountant=await createUser('accountant',['accountant']),finance=newActor();await finance('/auth/login',{email:accountant.email,password:pass});
+ const scopes=await finance('/ai/guide/scopes');assert.ok(scopes.some(s=>s.id==='invoices'));assert.ok(!scopes.some(s=>s.id==='employees'));
+ await finance('/ai/guide/employees',undefined,'GET',403);await finance('/ai/guide/chat',{scope:'employees',question:'Izin nasil onaylanir?'},'POST',403);await finance('/records/employees',undefined,'GET',403);await finance('/ai/interviews',undefined,'GET',403);await finance('/catalog',undefined,'GET',403);
+ const ai=await admin('/settings/ai');await admin('/settings/ai',{version:ai.version,values:{baseUrl:'http://ai-fixture:9000/v1',apiKey:'fixture-only-key',model:'fixture/model'}},'PUT');await admin('/ai/provider/verify',{});
+ const safe=await finance('/ai/guide/chat',{scope:'invoices',question:'Muhasebelestirme nasil yapilir?'});assert.ok(safe.sources.every(s=>s.scope==='invoices'));
+ await admin(`/admin/users/${accountant.id}`,{authzVersion:accountant.authzVersion,knowledgePermissions:{employees:'grant'}},'PATCH');await finance('/auth/me',undefined,'GET',401);await finance('/auth/login',{email:accountant.email,password:pass});assert.ok((await finance('/ai/guide/scopes')).some(s=>s.id==='employees'));await finance('/records/employees',undefined,'GET',403);
+ const accountFresh=(await admin('/admin/users')).find(u=>u.id===accountant.id);await admin(`/admin/users/${accountant.id}`,{authzVersion:accountFresh.authzVersion,knowledgePermissions:{employees:'deny'},modulePermissions:{invoices:'read',journal:'none'}},'PATCH');await finance('/auth/login',{email:accountant.email,password:pass});await finance('/ai/guide/employees',undefined,'GET',403);await finance('/records/journal',undefined,'GET',403);await finance('/records/invoices',{name:'Sahte'},'POST',403);
+ const custom=await createUser('custom',[],{modulePermissions:{purchases:'read'},knowledgePermissions:{recruitment:'grant'}}),reader=newActor();await reader('/auth/login',{email:custom.email,password:pass});const menu=await reader('/modules');assert.deepEqual(menu.map(m=>m.id),['purchases']);await reader('/records/purchases',{name:'Yetkisiz'},'POST',403);await reader('/ai/interviews',undefined,'GET',403);
+ await reader('/ai/guide/recruitment');await reader('/lookups/employees',undefined,'GET',403);
+ const hrUser=await createUser('hr',['hr']),hr=newActor();await hr('/auth/login',{email:hrUser.email,password:pass});
+ const created=await hr('/ai/interviews',{title:'Node.js Gelistirici',requirements:'Node.js, JavaScript ve MongoDB ile API tasarimi.',maxQuestions:2,requestId:randomUUID()},'POST',201),sid=created.session.id;
+ const guest=newActor(),wrong=newActor();await wrong(`/public/ai/interviews/${sid}`,undefined,'GET',403,{'X-Interview-Key':'b'.repeat(64)});
+ let session=await guest(`/public/ai/interviews/${sid}`,undefined,'GET',200,{'X-Interview-Key':created.inviteKey});assert.ok(session.question.includes('Node.js'));
+ await guest(`/public/ai/interviews/${sid}/answer`,{answer:'Event loop kullanirim.',version:session.version,requestId:randomUUID(),consent:false},'POST',400,{'X-Interview-Key':created.inviteKey});
+ const answerId=randomUUID();session=await guest(`/public/ai/interviews/${sid}/answer`,{answer:'Event loop kullanirim.',version:session.version,requestId:answerId,consent:true},'POST',200,{'X-Interview-Key':created.inviteKey});assert.ok(session.question.includes('Event loop'));assert.equal(session.turns.length,1);
+ const repeat=await guest(`/public/ai/interviews/${sid}/answer`,{answer:'Event loop kullanirim.',version:1,requestId:answerId,consent:true},'POST',200,{'X-Interview-Key':created.inviteKey});assert.equal(repeat.turns.length,1);
+ session=await guest(`/public/ai/interviews/${sid}/answer`,{answer:'Somut bir API ornegi.',version:session.version,requestId:randomUUID(),consent:true},'POST',200,{'X-Interview-Key':created.inviteKey});assert.equal(session.status,'completed');assert.equal(session.turns.length,2);
+ const invite=await hr(`/ai/interviews/${sid}/invitation`,{});await guest(`/public/ai/interviews/${sid}`,undefined,'GET',403,{'X-Interview-Key':created.inviteKey});await guest(`/public/ai/interviews/${sid}`,undefined,'GET',200,{'X-Interview-Key':invite.inviteKey});await hr(`/ai/interviews/${sid}/close`,{});await guest(`/public/ai/interviews/${sid}`,undefined,'GET',403,{'X-Interview-Key':invite.inviteKey});
+ await finance(`/ai/interviews/${sid}`,undefined,'GET',403);
+ const freshHr=(await admin('/admin/users')).find(u=>u.id===hrUser.id);await admin(`/admin/users/${hrUser.id}`,{authzVersion:freshHr.authzVersion,modulePermissions:{recruitment:'none'}},'PATCH');await hr('/auth/me',undefined,'GET',401);await hr('/auth/login',{email:hrUser.email,password:pass});await hr('/ai/interviews',undefined,'GET',403);
+ console.log('PASS: Modul read/write/deny, rehber bagimsiz izin/iptal, muhasebe-IK ayrimi, oturum iptali, kapsamli kaynak siniri, uyarlanan mulakat, davet izolasyonu/yenileme/iptal ve tekrar yanit engeli.');
+}

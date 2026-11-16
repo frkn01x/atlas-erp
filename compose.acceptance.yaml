@@ -1,0 +1,17 @@
+services:
+  api:
+    environment:
+      AI_TEST_ORIGIN: http://ai-fixture:9000/v1
+  waf:
+    ports: !reset []
+  ai-fixture:
+    profiles: [acceptance]
+    build: {context: ., target: test}
+    command: [node, api/test/ai-fixture.mjs]
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+  acceptance:
+    depends_on:
+      waf: {condition: service_healthy}
+      ai-fixture: {condition: service_started}

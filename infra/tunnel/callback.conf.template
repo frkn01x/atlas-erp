@@ -1,0 +1,55 @@
+upstream local_waf {
+  zone local_waf 64k;
+  resolver 127.0.0.11 valid=5s ipv6=off;
+  resolver_timeout 2s;
+  server waf:8080 resolve;
+}
+server {
+  listen 8080;
+  server_name _;
+  server_tokens off;
+  access_log off;
+  error_log /dev/stderr crit;
+  client_max_body_size 8k;
+  client_body_timeout 10s;
+  add_header Referrer-Policy no-referrer always;
+  add_header X-Content-Type-Options nosniff always;
+  add_header Content-Security-Policy "default-src 'none'; script-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'" always;
+  location ~ "^/unsubscribe/[a-f0-9]{64}$" {
+    if ($request_method != GET) { return 405; }
+    alias /srv/public/unsubscribe.html;
+    default_type text/html;
+    add_header Cache-Control "no-store" always;
+    add_header Referrer-Policy no-referrer always;
+    add_header Content-Security-Policy "default-src 'none'; script-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'" always;
+  }
+  location = /unsubscribe.js {
+    if ($request_method != GET) { return 405; }
+    alias /srv/public/unsubscribe.js;
+    default_type application/javascript;
+  }
+  location = /api/public/unsubscribe {
+    if ($request_method != POST) { return 405; }
+    proxy_pass http://local_waf;
+    proxy_http_version 1.1;
+    proxy_set_header Host localhost;
+    proxy_set_header X-Forwarded-For $remote_addr;
+    proxy_set_header X-Forwarded-Proto https;
+    proxy_set_header Connection "";
+    proxy_connect_timeout 5s;
+    proxy_read_timeout 30s;
+  }
+  location = /api/public/iyzico/callback {
+    if ($request_method != POST) { return 405; }
+    proxy_pass http://local_waf;
+    proxy_http_version 1.1;
+    proxy_set_header Host localhost;
+    proxy_set_header X-Forwarded-For $remote_addr;
+    proxy_set_header X-Forwarded-Proto https;
+    proxy_set_header Connection "";
+    proxy_connect_timeout 5s;
+    proxy_read_timeout 65s;
+    proxy_redirect "~^/payment-result/([a-f0-9]{24})$" "${LOCAL_RETURN_ORIGIN}/payment-result/$1";
+  }
+  location / { return 404; }
+}

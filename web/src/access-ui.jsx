@@ -1,0 +1,12 @@
+import React from 'react';
+import {modules,moduleMap,transitions,actionLabels,allowed} from '../../shared/modules.js';
+import {moduleLevel,knowledgeAllowed} from '../../shared/access.js';
+export function AccessEditor({value,onChange}){
+ const admin=value.roles.includes('admin');const selected=modules.filter(m=>m.enabled!==false);
+ function set(field,id,level){const map={...(value[field]||{})};if(['default','inherit'].includes(level))delete map[id];else map[id]=level;onChange(field,map);}
+ return <section className="accessEditor"><h3>Modul ve chatbot yetkileri</h3><p>Rol varsayilanlarini kullanabilir veya her modul icin ayri izin verebilirsiniz. Chatbot rehber izni, gercek kayitlara erisim izni vermez.</p>{admin&&<div className="notice">Admin rolu tum modullere ve rehbere erisir. Asagidaki kisitlamalar admin olmayan hesaplar icindir.</div>}<div className="tableScroll"><table><thead><tr><th>Modul</th><th>Uygulama erisimi</th><th>Rehber / chatbot bilgisi</th><th>Etkin yetki</th></tr></thead><tbody>{selected.map(m=><tr key={m.id}><td>{m.group} / {m.label}</td><td><select aria-label={`${m.label} uygulama yetkisi`} disabled={admin} value={value.modulePermissions?.[m.id]||'default'} onChange={e=>set('modulePermissions',m.id,e.target.value)}><option value="default">Rolden gelsin</option><option value="none">Erisim yok</option><option value="read">Sadece goruntule</option>{!m.readOnly&&<option value="write">Goruntule ve islem yap</option>}</select></td><td><select aria-label={`${m.label} rehber yetkisi`} disabled={admin} value={value.knowledgePermissions?.[m.id]||'inherit'} onChange={e=>set('knowledgePermissions',m.id,e.target.value)}><option value="inherit">Modul yetkisinden gelsin</option><option value="grant">Rehber bilgisine izin ver</option><option value="deny">Rehber bilgisini engelle</option></select></td><td><span className="badge">{{none:'Kapali',read:'Okuma',write:'Islem'}[moduleLevel(value,m)]}</span><small className="block">Rehber: {knowledgeAllowed(value,m)?'Acik':'Kapali'}</small></td></tr>)}</tbody></table></div></section>;
+}
+export function QuickActions({m,record,user,disabled,onAction,onDetail}){
+ const write=moduleLevel(user,m)==='write';
+ return <div className="quickActions">{write&&transitions(m,record.state).map(action=><button key={action} className="primary" disabled={disabled||(['deliver','receive'].includes(action)&&!allowed(user,moduleMap.stockTransfers,true))} onClick={()=>onAction(action)}>{actionLabels[action]||action}</button>)}<button disabled={disabled} onClick={onDetail}>Ayrinti</button></div>;
+}

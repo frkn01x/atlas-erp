@@ -1,0 +1,14 @@
+node_modules
+.git
+.env
+.env.*
+web/dist
+*.log
+LOCAL-ACCESS.txt
+readiness-result.json
+.private
+LOCAL-MONITORING.txt
+start-result.json
+reset-demo-result.json
+LOCAL-TUNNEL.txt
+tunnel-result.json

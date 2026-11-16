@@ -1,0 +1,19 @@
+{
+  "source": "odoo-20.0.zip",
+  "entries": 59782,
+  "manifestCount": 666,
+  "topLevelAddons": 663,
+  "nestedTestFixtures": 3,
+  "applicationModules": 34,
+  "targetAreas": 38,
+  "counts": {
+    "core": 7,
+    "basic": 29,
+    "pending": 630
+  },
+  "fullParity": 0,
+  "sourceModelFiles": 3640,
+  "sourceActionMethods": 1420,
+  "inventoryVersion": "0.1.0-historical",
+  "currentScopeDocument": "MODULLER.md"
+}
