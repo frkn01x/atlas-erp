@@ -2349,33 +2349,3 @@ Her aşamada beklenen ilk bakiye, işlemden sonraki durum ve bağlantılı belge
 Bazı kapsam/doğrulama dosyaları önceki sürüm tarihlerini taşır. Güncel bir çalıştırma değerlendirilirken dosyanın tarihi ve o çalıştırmanın `readiness-result.json` içeriği birlikte okunmalıdır.
 
 <a id="sinirlar"></a>
-## Mevcut sınırlar ve geliştirme başlıkları
-
-### Ticari ve finansal kapsam
-
-- Kısmi teslim alma, kısmi sevkiyat, kısmi faturalama ve kısmi ödeme akışları bulunmaz.
-- İade, iskonto ve gelişmiş fiyatlandırma ayrı geliştirme gerektirir.
-- Stok değerleme/FIFO, lot ve seri numarası takibi tamamlanmış özellikler değildir.
-- Banka mutabakatı ve doğrudan banka transferi entegrasyonu bulunmaz.
-- Yerel muhasebe fişleri tam mevzuat raporlama paketi yerine temel iş akışı kayıtlarıdır.
-- E-belge kapsamı temel test faturasına odaklıdır; tevkifat, istisna ve iade senaryoları eklenmemiştir.
-
-### Üretim, insan kaynakları ve proje kapsamı
-
-- MRP iş merkezi, kapasite, ayrıntılı üretim planlama ve çizelgeleme bulunmaz.
-- Bordro, vardiya, otomatik yıllık izin hak edişi ve resmî tatil takvimi bulunmaz.
-- Puantajdan otomatik maaş veya fazla mesai bordrosu üretilmez.
-- Zaman kaydından otomatik müşteri faturası kesilmez.
-- AI mülakat gerçek video görüşme veya otomatik işe alma kararı sistemi değildir.
-
-### Web ve iletişim kapsamı
-
-- Sayfa editörü tanımlı bloklarla çalışır; tam kapsamlı bir tema/eklenti pazarı içermez.
-- Fiziksel POS cihazı bağlantısı veya canlı banka terminali entegrasyonu bulunmaz.
-- SMS modülü seçilen kapsamın dışındadır.
-- Kampanya gönderiminde ileri segmentasyon ve kapsamlı pazarlama otomasyonu bulunmaz.
-- Anketler temel serbest metinli soru/cevap modelindedir; bütün anket tipleri eklenmemiştir.
-
-### Geliştirmeye devam ederken
-
-Yeni özellik eklenirken modül alanları, işlem sırası, ilişkili belge etkileri, arayüz davranışı, test senaryosu ve rehber metni birlikte değerlendirilmelidir. Alanın yalnızca forma eklenmesi bütün iş akışının tamamlandığı anlamına gelmez. Sağlayıcı bağlantılarında yerel XML veya test yanıtı ile gerçek servis kabulü ayrı sonuçlar olarak kaydedilmelidir.
